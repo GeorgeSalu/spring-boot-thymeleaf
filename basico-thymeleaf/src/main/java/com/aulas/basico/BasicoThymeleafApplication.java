@@ -1,4 +1,4 @@
-package com.aulas.basico_thymeleaf;
+package com.aulas.basico;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
