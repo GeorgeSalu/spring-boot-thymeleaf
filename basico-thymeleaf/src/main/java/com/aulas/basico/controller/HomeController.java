@@ -9,7 +9,7 @@ public class HomeController {
 
 	@RequestMapping("/")
 	public String index(Model model) {
-		model.addAttribute("msgBemVindo", "Bem-vindo a biblioteca");
+		model.addAttribute("msgBemVindo", "Bem-vindo à biblioteca");
 		return "publica-index";
 	}
 	
