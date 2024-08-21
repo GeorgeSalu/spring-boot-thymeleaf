@@ -13,7 +13,7 @@
 	<artifactId>basico-thymeleaf</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>basico-thymeleaf</name>
-	<description>projeto para explorar as possibilidades do spring mvc com thymeleaf</description>
+	<description>projeto para explorar as possibilidades do spring boot com spring mvc e thymeleaf para projetos fullstrack web java</description>
 
 	<properties>
 		<maven.compiler.target>11</maven.compiler.target>
