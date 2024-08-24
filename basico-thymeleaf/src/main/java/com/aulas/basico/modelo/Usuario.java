@@ -40,11 +40,11 @@ public class Usuario {
 	private String email;
 	
 	@NotEmpty(message = "a senha deve ser informada")
-	@Size(min = 3, message = "a senha deve ter no minimo 3 caracters")
+	@Size(min = 3, message = "a senha deve ter no minimo 3 caracteres")
 	private String password;
 	
 	@NotEmpty(message = "o login deve ser informado")
-	@Size(min = 4, message = "o login deve ter no minimo 4 caracters")
+	@Size(min = 4, message = "o login deve ter no minimo 4 caracteres")
 	private String login;
 	
 	private boolean ativo;
