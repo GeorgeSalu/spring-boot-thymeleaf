@@ -102,6 +102,7 @@ public class UsuarioController {
 		}
 		Usuario usuario = usuarioVelho.get();
 		model.addAttribute("usuario", usuario);
+		model.addAttribute("listaPapeis", papelRepository.findAll());
 		return "/auth/admin/admin-editar-papel-usuario";
 	}
 	
