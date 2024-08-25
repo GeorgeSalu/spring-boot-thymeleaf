@@ -36,6 +36,14 @@ public class Papel {
 		this.papel = papel;
 	}
 
+	public List<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
+
 	@Override
 	public String toString() {
 		return "Papel [id=" + id + ", papel=" + papel + ", usuarios=" + usuarios + "]";

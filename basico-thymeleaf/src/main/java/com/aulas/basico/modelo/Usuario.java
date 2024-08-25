@@ -124,6 +124,14 @@ public class Usuario {
 		this.ativo = ativo;
 	}
 
+	public List<Papel> getPapeis() {
+		return papeis;
+	}
+
+	public void setPapeis(List<Papel> papeis) {
+		this.papeis = papeis;
+	}
+
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", dataNascimento=" + dataNascimento
