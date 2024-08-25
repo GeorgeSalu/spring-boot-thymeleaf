@@ -1,4 +1,4 @@
-package com.aulas.basico;
+package com.aulas.basico.componente;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
