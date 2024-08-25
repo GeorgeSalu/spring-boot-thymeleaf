@@ -6,4 +6,6 @@ import com.aulas.basico.modelo.Papel;
 
 public interface PapelRepository extends JpaRepository<Papel, Long> {
 
+	Papel findByPapel(String papel);
+	
 }

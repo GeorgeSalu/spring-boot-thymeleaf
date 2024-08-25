@@ -20,6 +20,13 @@ public class Papel {
 	@ManyToMany(mappedBy = "papeis", fetch = FetchType.EAGER)
 	private List<Usuario> usuarios;
 
+	public Papel() {}
+
+	public Papel(String papel) {
+		super();
+		this.papel = papel;
+	}
+
 	public Long getId() {
 		return id;
 	}
