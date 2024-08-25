@@ -9,11 +9,11 @@
 		<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
 	</head>
 	<body>
+		<div th:insert="fragments/publica-nav :: nav"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col">
 					<h2 th:text="${msgBemVindo}"></h2>
-					<a class="btn btn-primary" href="/usuario/novo">Novo usuario</a>
 				</div>
 			</div>
 		</div>
