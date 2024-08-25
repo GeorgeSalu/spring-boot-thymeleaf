@@ -45,7 +45,7 @@ public class UsuarioController {
 		
 		Usuario usr = usuarioRepository.findByLogin(usuario.getLogin());
 		if(usr != null) {
-			model.addAttribute("loginExistente", "Login ja existe cadastrado");
+			model.addAttribute("loginJaExiste", "Login ja existe cadastrado");
 			return "/publica-criar-usuario";
 		}
 		
