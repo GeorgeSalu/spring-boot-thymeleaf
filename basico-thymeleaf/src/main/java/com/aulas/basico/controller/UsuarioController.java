@@ -48,7 +48,7 @@ public class UsuarioController {
 	@GetMapping("/admin/apagar/{id}")
 	public String deleteUser(@PathVariable("id") long id,Model model) {
 		Usuario usuario = usuarioRepository.findById(id)
-				.orElseThrow(() -> new IllegalArgumentException("id invalido "+id));
+				.orElseThrow(() -> new IllegalArgumentException("id = "+id+" invalido "));
 		usuarioRepository.delete(usuario);
 		return "redirect:/usuario/admin/listar";
 	}
