@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>biblioteca</title>
+		<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}" >
+		<script th:src="@{/jquery/jquery-3.7.1.min.js}"></script>
+		<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+	</head>
+	<body>
+		<div th:insert="fragments/publica-nav :: nav"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h2>Atribuir papel</h2>
+					<form action="#" th:action="@{/usuario/editarPapel/{id}(id=${usuario.id})}" th:object="${usuario}" method="post">
+						<div class="row mb-3">
+							<label class="col-sm-1 col-form-label">Nome:</label>
+							<div class="col-sm-5">
+								<input class="form-control" type="text" th:field="*{nome}" disabled>
+							</div>
+						</div>
+						
+						<div class="row mb-3">
+							<label class="col-sm-1 col-form-label">Cpf:</label>
+							<div class="col-sm-5">
+								<input class="form-control" type="text" th:field="*{cpf}" disabled>
+							</div>
+						</div>
+						
+						<div class="row mb-3">
+							<label class="col-sm-1 col-form-label">Nascimento:</label>
+							<div class="col-sm-5">
+								<input class="form-control" type="text" th:field="*{dataNascimento}" disabled>
+							</div>
+						</div>
+						
+						<div class="row mb-3">
+							<label class="col-sm-1 col-form-label">Email:</label>
+							<div class="col-sm-5">
+								<input class="form-control" type="text" th:field="*{email}" disabled>
+							</div>
+						</div>
+						
+						<div class="row mb-3">
+							<label class="col-sm-1 col-form-label">Login:</label>
+							<div class="col-sm-5">
+								<input class="form-control" type="text" th:field="*{login}" disabled>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
