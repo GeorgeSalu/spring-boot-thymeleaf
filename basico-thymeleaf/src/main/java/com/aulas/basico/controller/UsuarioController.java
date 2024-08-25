@@ -1,5 +1,7 @@
 package com.aulas.basico.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -14,7 +16,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.aulas.basico.modelo.Papel;
 import com.aulas.basico.modelo.Usuario;
+import com.aulas.basico.repository.PapelRepository;
 import com.aulas.basico.repository.UsuarioRepository;
 
 @Controller
@@ -24,6 +28,9 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
+	@Autowired
+	private PapelRepository papelRepository;
+	
 	@GetMapping("/novo")
 	public String adicionarUsuario(Model model) {
 		model.addAttribute("usuario", new Usuario());
@@ -31,10 +38,21 @@ public class UsuarioController {
 	}
 	
 	@PostMapping("/salvar")
-	public String salvarUsuario(@Valid Usuario usuario,BindingResult result,RedirectAttributes attributes) {
+	public String salvarUsuario(@Valid Usuario usuario,BindingResult result,Model model,RedirectAttributes attributes) {
 		if(result.hasErrors()) {
 			return "/publica-criar-usuario";
 		}
+		
+		Usuario usr = usuarioRepository.findByLogin(usuario.getLogin());
+		if(usr != null) {
+			model.addAttribute("loginExistente", "Login ja existe cadastrado");
+			return "/publica-criar-usuario";
+		}
+		
+		Papel papel = papelRepository.findByPapel("USER");
+		List<Papel> papeis = new ArrayList<Papel>();
+		papeis.add(papel);
+		usuario.setPapeis(papeis);
 		
 		usuarioRepository.save(usuario);
 		attributes.addFlashAttribute("mensagem", "usuario salvo com sucesso");
