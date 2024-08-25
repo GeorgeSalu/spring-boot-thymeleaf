@@ -35,7 +35,7 @@
 								<td>
 									<a class="btn btn-outline-danger btn-sm"
 									   th:href="@{/usuario/admin/apagar/{id}(id=${usuario.id})}"
-									   th:data-confirm-delete="|Voce gostaria de apagar ${usuario.nome} ?|"
+									   th:data-confirm-delete="|Voce gostaria de apagar o usuario ${usuario.nome} ?|"
 									   onclick="if (!confirm(this.getAttribute('data-confirm-delete'))) return false">
 										Apagar
 									</a>
