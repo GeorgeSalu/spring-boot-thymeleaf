@@ -128,8 +128,14 @@ public class UsuarioController {
 					papeis.add(papel);
 				}
 			}
+			Optional<Usuario> usuarioOptional = usuarioRepository.findById(idUsuario);
+			if(usuarioOptional.isPresent()) {
+				Usuario usr = usuarioOptional.get();
+				usr.setPapeis(papeis); // relaciona papeis ao usuario
+				usuarioRepository.save(usr);
+			}
 		}
-		
+		return "redirect:/usuario/admin/listar";
 	}
 	
 	

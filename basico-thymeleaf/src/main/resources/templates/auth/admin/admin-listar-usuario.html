@@ -33,6 +33,11 @@
 								<td><span th:text="${#dates.format(usuario.dataNascimento, 'dd/MM/yyyy')}">data nascimento</span></td>
 								<td><span th:text="${usuario.email}">e-mail</span></td>
 								<td>
+									<th:block th:each="pp : ${usuario.papeis}">
+										<span th:text="${pp.papel}">Papel</span>
+									</th:block>
+								</td>
+								<td>
 									<a class="btn btn-outline-danger btn-sm"
 									   th:href="@{/usuario/admin/apagar/{id}(id=${usuario.id})}"
 									   th:data-confirm-delete="|Você gostaria de apagar o usuario ${usuario.nome} ?|"
