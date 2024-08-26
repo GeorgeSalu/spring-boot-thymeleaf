@@ -108,7 +108,7 @@ public class UsuarioController {
 	}
 	
 	@PostMapping("/editarPapel/{id}")
-	public String atribuitpapel(@PathVariable("id") long idUsuario,
+	public String atribuirPapel(@PathVariable("id") long idUsuario,
 			                    @RequestParam(value = "pps", required = false) int[] pps,
 			                    Usuario usuario, 
 			                    RedirectAttributes attributes) {
