@@ -10,9 +10,6 @@ public class ConfiguracaoVisao implements WebMvcConfigurer {
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 
-		registry.addViewController("/auth/admin/admin-index").setViewName("/auth/admin/admin-index");
-		registry.addViewController("/auth/user/user-index").setViewName("/auth/user/user-index");
-		registry.addViewController("/auth/biblio/biblio-index").setViewName("/auth/biblio/biblio-index");
 		registry.addViewController("/auth/auth-acesso-negado").setViewName("/auth/auth-acesso-negado");
 
 	}
