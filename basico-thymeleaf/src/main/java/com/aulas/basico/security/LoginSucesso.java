@@ -41,6 +41,7 @@ public class LoginSucesso extends SavedRequestAwareAuthenticationSuccessHandler 
 		response.sendRedirect(redirectURL);
 	}
 	
+	// verifica qual papel o usuario tem na aplicacao
 	private boolean temAutorizacao(Usuario usuario,String papel) {
 		for(Papel pp: usuario.getPapeis()) {
 			if(pp.getPapel().equals(papel)) {
