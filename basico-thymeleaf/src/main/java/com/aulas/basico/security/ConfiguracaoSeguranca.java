@@ -56,7 +56,7 @@ public class ConfiguracaoSeguranca extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		// o objeto que vai obter od datelhes do usuario 
+		// o objeto que vai obter os detalhes do usuario 
 		UserDetailsService detalheDoUsuario = userDetailsService();
 		// objeto para criptografia
 		BCryptPasswordEncoder criptografia = gerarCriptografia();
