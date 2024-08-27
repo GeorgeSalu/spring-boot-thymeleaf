@@ -1,4 +1,4 @@
-package com.aulas.basico;
+package com.aulas.basico.view;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
