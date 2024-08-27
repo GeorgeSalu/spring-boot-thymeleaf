@@ -13,4 +13,9 @@ public class HomeController {
 		return "publica-index";
 	}
 	
+	@GetMapping("/login")
+	public String login() {
+		return "login";
+	}
+	
 }
