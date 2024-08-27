@@ -57,7 +57,7 @@ public class ConfiguracaoSeguranca extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		// o objeto que vai obter os detalhes do usuario 
-		UserDetailsService detalheDoUsuario = userDetailsService();
+		UserDetailsService detalheDoUsuario = userDetailsServiceBean();
 		// objeto para criptografia
 		BCryptPasswordEncoder criptografia = gerarCriptografia();
 		
