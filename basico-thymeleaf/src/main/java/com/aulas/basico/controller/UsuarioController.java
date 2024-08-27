@@ -37,8 +37,8 @@ public class UsuarioController {
 	@Autowired
 	private BCryptPasswordEncoder criptografia;
 	
-	@GetMapping("/novo")
-	public String adicionarUsuario(@CurrentSecurityContext(expression = "authentication.name") String login) {
+	@GetMapping("/index")
+	public String index(@CurrentSecurityContext(expression = "authentication.name") String login) {
 		
 		Usuario usuario = usuarioRepository.findByLogin(login);
 		
@@ -52,6 +52,12 @@ public class UsuarioController {
 		}
 
 		return redirectURL;
+	}
+	
+	@GetMapping("/novo")
+	public String adicionarUsuario(Model model) {
+		model.addAttribute("usuario", new Usuario());
+		return "/publica-criar-usuario";
 	}
 	
 	@PostMapping("/salvar")
