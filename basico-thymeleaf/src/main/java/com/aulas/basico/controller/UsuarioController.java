@@ -21,7 +21,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.aulas.basico.modelo.Papel;
 import com.aulas.basico.modelo.Usuario;
-import com.aulas.basico.repository.PapelRepository;
 import com.aulas.basico.repository.UsuarioRepository;
 import com.aulas.basico.service.PapelService;
 
