@@ -20,7 +20,7 @@ public class PapelServiceImpl implements PapelService {
 		if(opt.isPresent()) {
 			return opt.get();
 		} else {
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException("Papel com id "+id+" não existe");
 		}
 	}
 
