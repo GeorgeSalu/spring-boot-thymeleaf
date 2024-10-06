@@ -13,7 +13,7 @@ import com.aulas.basico.modelo.Usuario;
 
 public class DetalheUsuario implements UserDetails {
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -408853313369003841L;
 	private Usuario usuario;
 	
 	public DetalheUsuario(Usuario usuario) {
