@@ -23,6 +23,7 @@ import com.aulas.basico.modelo.Papel;
 import com.aulas.basico.modelo.Usuario;
 import com.aulas.basico.repository.PapelRepository;
 import com.aulas.basico.repository.UsuarioRepository;
+import com.aulas.basico.service.PapelService;
 
 @Controller
 @RequestMapping("/usuario")
@@ -32,7 +33,7 @@ public class UsuarioController {
 	private UsuarioRepository usuarioRepository;
 	
 	@Autowired
-	private PapelRepository papelRepository;
+	private PapelService papelService;
 	
 	@Autowired
 	private BCryptPasswordEncoder criptografia;
@@ -72,7 +73,7 @@ public class UsuarioController {
 			return "/publica-criar-usuario";
 		}
 		
-		Papel papel = papelRepository.findByPapel("USER");
+		Papel papel = papelService.buscarPapel("USER");
 		List<Papel> papeis = new ArrayList<Papel>();
 		papeis.add(papel);
 		usuario.setPapeis(papeis);
@@ -128,7 +129,7 @@ public class UsuarioController {
 		}
 		Usuario usuario = usuarioVelho.get();
 		model.addAttribute("usuario", usuario);
-		model.addAttribute("listaPapeis", papelRepository.findAll());
+		model.addAttribute("listaPapeis", papelService.listarPapel());
 		return "/auth/admin/admin-editar-papel-usuario";
 	}
 	
@@ -147,11 +148,8 @@ public class UsuarioController {
 			List<Papel> papeis = new ArrayList<Papel>();
 			for(int i = 0;i < pps.length; i++) {
 				long idPapel = pps[i];
-				Optional<Papel> papelOptional = papelRepository.findById(idPapel);
-				if (papelOptional.isPresent()) {
-					Papel papel = papelOptional.get();
-					papeis.add(papel);
-				}
+				Papel papel = papelService.buscarPapelPorId(idPapel);
+				papeis.add(papel);
 			}
 			Optional<Usuario> usuarioOptional = usuarioRepository.findById(idUsuario);
 			if(usuarioOptional.isPresent()) {
