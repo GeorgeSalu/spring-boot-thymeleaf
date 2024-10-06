@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.aulas.basico.modelo.Papel;
 import com.aulas.basico.repository.PapelRepository;
 
+@Service
 public class PapelServiceImpl implements PapelService {
 
 	@Autowired
