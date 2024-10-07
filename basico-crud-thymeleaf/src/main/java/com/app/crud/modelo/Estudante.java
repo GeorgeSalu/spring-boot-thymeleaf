@@ -46,4 +46,9 @@ public class Estudante {
 		this.idade = idade;
 	}
 
+	@Override
+	public String toString() {
+		return "Estudante [id=" + id + ", nome=" + nome + ", idade=" + idade + "]";
+	}
+
 }
