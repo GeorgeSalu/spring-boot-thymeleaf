@@ -11,4 +11,9 @@ public class EstudanteController {
 		return "/lista-estudantes";
 	}
 	
+	@GetMapping("/novo")
+	public String novoEstudante() {
+		return "/novo-estudante";
+	}
+	
 }
