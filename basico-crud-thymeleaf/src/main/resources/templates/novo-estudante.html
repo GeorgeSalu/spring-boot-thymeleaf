@@ -27,13 +27,19 @@
 						<div class="col-sm-5">
 							<input class="form-control" type="text" th:field="*{nome}" >
 						</div>	
+						<div class="col-sm-3">
+							<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+						</div>
 					</div>
 					
 					<div class="row mb-3">
 						<label class="col-sm-1 col-form-label">Idade</label>
 						<div class="col-sm-5">
 							<input class="form-control" type="text" th:field="*{idade}" >
-						</div>	
+						</div>
+												<div class="col-sm-3">
+							<span th:if="${#fields.hasErrors('idade')}" th:errors="*{idade}"></span>
+						</div>
 					</div>
 					
 					<input class="btn btn-primary" type="submit" value="Gravar">
