@@ -8,6 +8,11 @@
 	<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
 	
 	<link rel="stylesheet" th:href="@{/fontAwesome/font-awesome.min.css}">
+	<style type="text/css">
+		.mensagem {
+			color: red
+		}
+	</style>
 	<title>Cadastro de estudante</title>
 </head>
 <body>
@@ -28,7 +33,7 @@
 							<input class="form-control" type="text" th:field="*{nome}" >
 						</div>	
 						<div class="col-sm-3">
-							<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+							<span class="mensagem" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
 						</div>
 					</div>
 					
@@ -38,7 +43,7 @@
 							<input class="form-control" type="text" th:field="*{idade}" >
 						</div>
 						<div class="col-sm-3">
-							<span th:if="${#fields.hasErrors('idade')}" th:errors="*{idade}"></span>
+							<span class="mensagem" th:if="${#fields.hasErrors('idade')}" th:errors="*{idade}"></span>
 						</div>
 					</div>
 					
