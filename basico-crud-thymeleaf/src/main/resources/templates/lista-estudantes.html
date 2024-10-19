@@ -17,6 +17,28 @@
 			<div class="col">
 				<a th:href="@{/novo}" class="btn btn-primary">Novo Estudante</a>
 			</div>
+			
+			<div class="row">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>id</th>
+							<th>nome</th>
+							<th>idade</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:if="${listaEstudante.empty}">
+							<td colspan="3">nao existe estudantes</td>
+						</tr>
+						<tr th:each="estudante : ${listaEstudante}">
+							<td><span th:text="${estudante.id}"></span></td>
+							<td><span th:text="${estudante.nome}"></span></td>
+							<td><span th:text="${estudante.idade}"></span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
 </body>

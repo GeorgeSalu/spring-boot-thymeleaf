@@ -1,5 +1,7 @@
 package com.app.crud.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +23,9 @@ public class EstudanteController {
 	private EstudanteService estudanteService;
 
 	@GetMapping("/")
-	public String listarEstudantes() {
+	public String listarEstudantes(Model model) {
+		List<Estudante> estudantes = estudanteService.buscarTodosEstudantes();
+		model.addAttribute("listaEstudante", estudantes);
 		return "/lista-estudantes";
 	}
 	
