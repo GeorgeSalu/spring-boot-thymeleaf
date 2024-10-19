@@ -25,7 +25,7 @@ public class EstudanteController {
 	@GetMapping("/")
 	public String listarEstudantes(Model model) {
 		List<Estudante> estudantes = estudanteService.buscarTodosEstudantes();
-		model.addAttribute("listaEstudante", estudantes);
+		model.addAttribute("listaEstudantes", estudantes);
 		return "/lista-estudantes";
 	}
 	
