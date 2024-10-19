@@ -30,7 +30,7 @@ public class EstudanteController {
 	}
 	
 	@PostMapping("/gravar")
-	public String gracar(@ModelAttribute("novoEstudante") Estudante estudante,RedirectAttributes attributes) {
+	public String gravarEstudante(@ModelAttribute("novoEstudante") Estudante estudante,RedirectAttributes attributes) {
 		estudanteService.criarEstudante(estudante);
 		attributes.addFlashAttribute("mensagem", "Estudante salvo com sucesso!");
 		return "redirect:/novo";
