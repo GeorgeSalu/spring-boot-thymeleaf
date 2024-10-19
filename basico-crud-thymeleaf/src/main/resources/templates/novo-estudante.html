@@ -16,6 +16,10 @@
 		<div class="row" style="padding-bottom: 30px;">
 			<div class="col">
 				<h2>Cadastro de estudante</h2>
+				<div class="alert alert-success alert-dismissible fade show" th:if="${mensagem}">
+					<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+					<span th:text="${mensagem}"></span>
+				</div>
 				<form th:action="@{/gravar}" th:object="${novoEstudante}" method="post">
 				
 					<div class="row mb-3">

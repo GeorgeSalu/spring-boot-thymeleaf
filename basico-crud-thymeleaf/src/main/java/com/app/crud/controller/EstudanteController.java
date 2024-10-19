@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.app.crud.modelo.Estudante;
 import com.app.crud.service.EstudanteService;
@@ -29,8 +30,9 @@ public class EstudanteController {
 	}
 	
 	@PostMapping("/gravar")
-	public String gracar(@ModelAttribute("novoEstudante") Estudante estudante) {
+	public String gracar(@ModelAttribute("novoEstudante") Estudante estudante,RedirectAttributes attributes) {
 		estudanteService.criarEstudante(estudante);
+		attributes.addFlashAttribute("mensagem", "Estudante salvo com sucesso!");
 		return "redirect:/novo";
 	}
 	
