@@ -40,9 +40,9 @@ public class EstudanteController {
 	
 	@PostMapping("/gravar")
 	public String gravarEstudante(@ModelAttribute("novoEstudante") @Valid Estudante estudante,
-								  BindingResult errors,RedirectAttributes attributes) {
+								  BindingResult erros,RedirectAttributes attributes) {
 		
-		if(errors.hasErrors()) {
+		if(erros.hasErrors()) {
 			return "/novo-estudante";
 		}
 		
