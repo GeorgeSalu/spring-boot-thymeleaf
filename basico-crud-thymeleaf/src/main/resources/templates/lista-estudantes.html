@@ -7,7 +7,10 @@
 	<script th:src="@{/jquery/jquery-3.7.1.min.js}"></script>
 	<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
 	
-	<link rel="stylesheet" th:href="@{/fontAwesome/font-awesome.min.css}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    	integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    	crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 	<title>Lista de estudantes</title>
 </head>
 <body>
@@ -35,6 +38,9 @@
 							<td><span th:text="${estudante.id}"></span></td>
 							<td><span th:text="${estudante.nome}"></span></td>
 							<td><span th:text="${estudante.idade}"></span></td>
+							<td>
+								<a class="fa-regular fa-trash-can icon-dark btn-delete" href="#"></a>
+							</td>
 						</tr>
 					</tbody>
 				</table>
