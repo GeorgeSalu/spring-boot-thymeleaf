@@ -46,7 +46,12 @@
 								<a class="fa-regular fa-trash-can icon-dark btn-delete" 
 									th:href="@{/apagar/{id}(id=${estudante.id})}"
 									th:data-confirm-delete="|Voce gostaria de apagar ${estudante.nome}|"
-									th:onclick="if (!confirm(this.getAttribute('data-confirm-delete'))) return false"></a>
+									th:onclick="if (!confirm(this.getAttribute('data-confirm-delete'))) return false">
+								</a>
+								&nbsp;
+								<a class="fa-regular fa-pen-to-square icon-dark"
+									th:href="@{/editar/{id}(id=${estudante.id})}">
+								</a>
 							</td>
 						</tr>
 					</tbody>

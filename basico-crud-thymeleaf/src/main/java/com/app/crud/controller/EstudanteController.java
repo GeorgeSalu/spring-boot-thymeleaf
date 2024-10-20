@@ -61,4 +61,15 @@ public class EstudanteController {
 		return "redirect:/";
 	}
 	
+	@GetMapping("/editar/{id}")
+	public String editarForm(@PathVariable("id") long id,RedirectAttributes attributes,Model model) {
+		try {
+			Estudante estudante = estudanteService.buscarEstudantePorId(id);
+			model.addAttribute("objetoEstudante", estudante);
+		} catch (EstudanteNotFoundException e) {
+			attributes.addFlashAttribute("mensagemErro", e.getMessage());
+		}
+		return "redirect:/";
+	}
+	
 }
