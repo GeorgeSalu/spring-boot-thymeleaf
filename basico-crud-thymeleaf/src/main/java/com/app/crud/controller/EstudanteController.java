@@ -8,9 +8,11 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.app.crud.exception.EstudanteNotFoundException;
 import com.app.crud.modelo.Estudante;
 import com.app.crud.service.EstudanteService;
 
@@ -47,6 +49,16 @@ public class EstudanteController {
 		estudanteService.criarEstudante(estudante);
 		attributes.addFlashAttribute("mensagem", "Estudante salvo com sucesso!");
 		return "redirect:/novo";
+	}
+
+	@GetMapping("/apagar/{id}")
+	public String apagarEstudante(@PathVariable("id") long id,RedirectAttributes attributes) {
+		try {
+			estudanteService.apagarEstudante(id);
+		} catch (EstudanteNotFoundException e) {
+			attributes.addFlashAttribute("mensagemErro", e.getMessage());
+		}
+		return "redirect:/";
 	}
 	
 }
