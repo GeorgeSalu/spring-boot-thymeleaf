@@ -20,43 +20,43 @@
 			<div class="col">
 				<a th:href="@{/novo}" class="btn btn-primary">Novo Estudante</a>
 			</div>
-			
-			<div class="row">
-				<div class="alert alert-danger alert-dismissible fade show" th:if="${mensagemErro}">
-					<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-					<span th:text="${mensagemErro}"></span>
-				</div>
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>id</th>
-							<th>nome</th>
-							<th>idade</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:if="${listaEstudantes.empty}">
-							<td colspan="3">não existem estudantes</td>
-						</tr>
-						<tr th:each="estudante : ${listaEstudantes}">
-							<td><span th:text="${estudante.id}"></span></td>
-							<td><span th:text="${estudante.nome}"></span></td>
-							<td><span th:text="${estudante.idade}"></span></td>
-							<td>
-								<a class="fa-regular fa-trash-can icon-dark btn-delete" 
-									th:href="@{/apagar/{id}(id=${estudante.id})}"
-									th:data-confirm-delete="|Voce gostaria de apagar ${estudante.nome}|"
-									th:onclick="if (!confirm(this.getAttribute('data-confirm-delete'))) return false">
-								</a>
-								&nbsp;
-								<a class="fa-regular fa-pen-to-square icon-dark"
-									th:href="@{/editar/{id}(id=${estudante.id})}">
-								</a>
-							</td>
-						</tr>
-					</tbody>
-				</table>
+		</div>
+		
+		<div class="row">
+			<div class="alert alert-danger alert-dismissible fade show" th:if="${mensagemErro}">
+				<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+				<span th:text="${mensagemErro}"></span>
 			</div>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>id</th>
+						<th>nome</th>
+						<th>idade</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:if="${listaEstudantes.empty}">
+						<td colspan="3">não existem estudantes</td>
+					</tr>
+					<tr th:each="estudante : ${listaEstudantes}">
+						<td><span th:text="${estudante.id}"></span></td>
+						<td><span th:text="${estudante.nome}"></span></td>
+						<td><span th:text="${estudante.idade}"></span></td>
+						<td>
+							<a class="fa-regular fa-trash-can icon-dark btn-delete" 
+								th:href="@{/apagar/{id}(id=${estudante.id})}"
+								th:data-confirm-delete="|Voce gostaria de apagar ${estudante.nome}|"
+								th:onclick="if (!confirm(this.getAttribute('data-confirm-delete'))) return false">
+							</a>
+							&nbsp;
+							<a class="fa-regular fa-pen-to-square icon-dark"
+								th:href="@{/editar/{id}(id=${estudante.id})}">
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </body>
