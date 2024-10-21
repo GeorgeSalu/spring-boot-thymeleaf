@@ -29,7 +29,7 @@ public class EstudanteService {
 		if (opt.isPresent()) {
 			return opt.get();
 		} else {
-			throw new EstudanteNotFoundException("Estudante com "+id+" nao existe");
+			throw new EstudanteNotFoundException("Estudante com "+id+" não existe");
 		}
 	}
 	
