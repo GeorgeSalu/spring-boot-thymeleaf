@@ -23,6 +23,18 @@
 		</div>
 		
 		<div class="row">
+			<div class="col-sm-5">
+				<form action="#" method="post">
+					<div class="input-group">
+						<input type="text" class="form-control" name="nome"  />
+						<input type="submit" class="btn btn-primary" value="buscar" />
+						<a class="btn btn-danger" type="submit">Cancelar</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		
+		<div class="row">
 			<div class="alert alert-danger alert-dismissible fade show" th:if="${mensagemErro}">
 				<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
 				<span th:text="${mensagemErro}"></span>
