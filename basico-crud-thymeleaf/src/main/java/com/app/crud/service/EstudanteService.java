@@ -38,6 +38,10 @@ public class EstudanteService {
 		estudanteRepository.delete(estudante);
 	}
 	
+	public Estudante alterarEstudante(Estudante estudante) {
+		return estudanteRepository.save(estudante);
+	}
+	
 }
 
 

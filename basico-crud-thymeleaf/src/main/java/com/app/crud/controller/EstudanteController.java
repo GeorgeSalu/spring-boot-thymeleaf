@@ -66,10 +66,28 @@ public class EstudanteController {
 		try {
 			Estudante estudante = estudanteService.buscarEstudantePorId(id);
 			model.addAttribute("objetoEstudante", estudante);
+			return "alterar-estudante";
 		} catch (EstudanteNotFoundException e) {
 			attributes.addFlashAttribute("mensagemErro", e.getMessage());
 		}
 		return "redirect:/";
 	}
 	
+	@PostMapping("/editar/{id}")
+	public String editarEstudante(@PathVariable("id") long id,
+								  @ModelAttribute("objetoEstudante") @Valid Estudante estudante,
+								  BindingResult erros) {
+		
+		if (erros.hasErrors()) {
+			estudante.setId(id);
+			return "/alterar-estudante";
+		}
+		
+		estudanteService.alterarEstudante(estudante);
+		
+		return "redirect:/";
+	}
+	
 }
+
+
