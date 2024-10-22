@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class Endereco {
@@ -11,8 +13,17 @@ public class Endereco {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@NotBlank(message = "O logradouro deve ser informado")
+	@Size(min = 2, message = "O logradouro deve ter no mínimo 2 caracteres")
 	private String logradouro;
+	
+	@NotBlank(message = "O numero deve ser informado")
+	@Size(min = 2, message = "O numero deve ter no mínimo 2 caracteres")
 	private String numero;
+	
+	@NotBlank(message = "O cep deve ser informado")
+	@Size(min = 8, message = "O cep deve ter no mínimo 8 caracteres")
 	private String cep;
 
 	public Long getId() {
