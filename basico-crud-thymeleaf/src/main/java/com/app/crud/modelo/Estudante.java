@@ -19,7 +19,7 @@ public class Estudante {
 	@Size(min = 2, message = "O nome deve ter no minimo 2 caracteres")
 	private String nome;
 
-	@Min(value = 18, message = "O aluno deve ter no minimo 18 anos")
+	@Min(value = 18, message = "O aluno deve ter no mínimo 18 anos")
 	private int idade;
 
 	public Long getId() {
