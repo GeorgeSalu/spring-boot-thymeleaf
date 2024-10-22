@@ -1,9 +1,11 @@
 package com.app.crud.modelo;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -21,6 +23,17 @@ public class Estudante {
 
 	@Min(value = 18, message = "O aluno deve ter no mínimo 18 anos")
 	private int idade;
+
+	@OneToOne(mappedBy = "estudante", cascade = CascadeType.ALL)
+	private Endereco endereco;
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
 
 	public Long getId() {
 		return id;
@@ -48,7 +61,7 @@ public class Estudante {
 
 	@Override
 	public String toString() {
-		return "Estudante [id=" + id + ", nome=" + nome + ", idade=" + idade + "]";
+		return "Estudante [id=" + id + ", nome=" + nome + ", idade=" + idade + ", endereco=" + endereco + "]";
 	}
 
 }
