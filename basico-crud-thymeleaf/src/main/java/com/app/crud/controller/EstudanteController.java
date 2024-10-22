@@ -3,6 +3,7 @@ package com.app.crud.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -36,6 +37,16 @@ public class EstudanteController {
 		Estudante estudante = new Estudante();
 		model.addAttribute("novoEstudante", estudante);
 		return "/novo-estudante";
+	}
+	
+	@PostMapping("/buscar")
+	public String buscarEstudantes(Model model, @Param("nome") String nome) {
+		if (nome == null) {
+			return "redirect:/";
+		}
+		List<Estudante> estudantes = estudanteService.buscarTodosEstudantesPorNome(nome);
+		model.addAttribute("listaEstudantes", estudantes);
+		return "/lista-estudantes";
 	}
 	
 	@PostMapping("/gravar")

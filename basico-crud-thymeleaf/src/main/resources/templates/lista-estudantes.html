@@ -24,11 +24,11 @@
 		
 		<div class="row">
 			<div class="col-sm-5">
-				<form action="#" method="post">
+				<form th:action="@{/buscar}" method="post">
 					<div class="input-group">
 						<input type="text" class="form-control" name="nome"  />
 						<input type="submit" class="btn btn-primary" value="buscar" />
-						<a class="btn btn-danger" type="submit">Cancelar</a>
+						<a th:href="@{/}" class="btn btn-danger" type="submit">Cancelar</a>
 					</div>
 				</form>
 			</div>
