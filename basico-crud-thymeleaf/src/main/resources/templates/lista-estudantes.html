@@ -50,7 +50,7 @@
 				</thead>
 				<tbody>
 					<tr th:if="${listaEstudantes.empty}">
-						<td colspan="3">não existem estudantes</td>
+						<td colspan="3">Não existem estudantes</td>
 					</tr>
 					<tr th:each="estudante : ${listaEstudantes}">
 						<td><span th:text="${estudante.id}"></span></td>
