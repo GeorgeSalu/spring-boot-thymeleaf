@@ -109,7 +109,6 @@ public class EstudanteController {
 		}
 		
 		estudanteService.alterarEstudante(estudante);
-		
 		return "redirect:/";
 	}
 	
