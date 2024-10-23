@@ -24,8 +24,7 @@ public class AreaController {
 
 	@GetMapping("/novo")
 	public String novoArea(Model model) {
-		Area area = new Area();
-		model.addAttribute("novoArea", area);
+		model.addAttribute("novoArea", new Area());
 		return "novo-area";
 	}
 	
