@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.app.crud.exception.EstudanteNotFoundException;
+import com.app.crud.modelo.Area;
 import com.app.crud.modelo.Estudante;
+import com.app.crud.service.AreaService;
 import com.app.crud.service.EstudanteService;
 
 import jakarta.validation.Valid;
@@ -24,6 +26,9 @@ public class EstudanteController {
 	
 	@Autowired
 	private EstudanteService estudanteService;
+	
+	@Autowired
+	private AreaService areaService;
 
 	@GetMapping("/")
 	public String listarEstudantes(Model model) {
@@ -36,6 +41,10 @@ public class EstudanteController {
 	public String novoEstudante(Model model) {
 		Estudante estudante = new Estudante();
 		model.addAttribute("novoEstudante", estudante);
+		
+		List<Area> areas = areaService.listar();
+		model.addAttribute("areas", areas);
+		
 		return "/novo-estudante";
 	}
 	
