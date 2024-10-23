@@ -84,7 +84,7 @@ public class EnderecoController {
 			return "alterar-endereco";
 		}
 		enderecoService.salvar(endereco);
-		attributes.addFlashAttribute("mensagem", "Endereço salvo com sucesso");
+		attributes.addFlashAttribute("mensagem", "Endereço alterado com sucesso");
 		
 		return "redirect:/endereco/buscar-endereco/"+idEstudante;
 	}
