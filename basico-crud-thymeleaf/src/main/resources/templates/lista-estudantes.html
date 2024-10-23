@@ -46,6 +46,7 @@
 						<th>Id</th>
 						<th>Nome</th>
 						<th>Idade</th>
+						<th>Area</th>
 						<th>Ações</th>
 					</tr>
 				</thead>
@@ -57,6 +58,7 @@
 						<td><span th:text="${estudante.id}"></span></td>
 						<td><span th:text="${estudante.nome}"></span></td>
 						<td><span th:text="${estudante.idade}"></span></td>
+						<td><span th:text="${estudante.area.descricao}"></span></td>
 						<td>
 							<a class="fa-regular fa-trash-can icon-dark btn-delete" 
 								th:href="@{/apagar/{id}(id=${estudante.id})}"
