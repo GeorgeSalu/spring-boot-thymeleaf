@@ -39,8 +39,7 @@ public class EstudanteController {
 	
 	@GetMapping("/novo")
 	public String novoEstudante(Model model) {
-		Estudante estudante = new Estudante();
-		model.addAttribute("novoEstudante", estudante);
+		model.addAttribute("novoEstudante", new Estudante());
 		
 		List<Area> areas = areaService.listar();
 		model.addAttribute("areas", areas);
