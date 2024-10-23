@@ -59,9 +59,11 @@ public class EstudanteController {
 	
 	@PostMapping("/gravar")
 	public String gravarEstudante(@ModelAttribute("novoEstudante") @Valid Estudante estudante,
-								  BindingResult erros,RedirectAttributes attributes) {
+								  BindingResult erros,RedirectAttributes attributes,Model model) {
 		
 		if(erros.hasErrors()) {
+			List<Area> areas = areaService.listar();
+			model.addAttribute("areas", areas);
 			return "/novo-estudante";
 		}
 		
