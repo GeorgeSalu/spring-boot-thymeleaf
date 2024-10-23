@@ -40,7 +40,8 @@ public class EnderecoController {
 				model.addAttribute("item", endereco);
 				pagina = "/novo-endereco";
 			} else {
-				pagina = "redirect:/";
+				model.addAttribute("item", estudante.getEndereco());
+				pagina = "/alterar-endereco";
 			}
 		} catch (EstudanteNotFoundException e) {
 			e.printStackTrace();
@@ -61,6 +62,26 @@ public class EnderecoController {
 		}
 		if(result.hasErrors()) {
 			return "novo-endereco";
+		}
+		enderecoService.salvar(endereco);
+		attributes.addFlashAttribute("mensagem", "Endereço salvo com sucesso");
+		
+		return "redirect:/endereco/buscar-endereco/"+idEstudante;
+	}
+	
+	@PostMapping("/alterar-endereco/{idEstudante}/{idEndereco}")
+	public String alterarEndereco(@PathVariable("idEstudante") long idEstudante,@PathVariable("idEndereco") long idEndereco,
+			@ModelAttribute("item") @Valid Endereco endereco, BindingResult result, RedirectAttributes attributes) {
+		
+		try {
+			Estudante estudante = estudanteService.buscarEstudantePorId(idEstudante);
+			endereco.setEstudante(estudante);
+			endereco.setId(idEndereco);
+		} catch (EstudanteNotFoundException e) {
+			e.printStackTrace();
+		}
+		if(result.hasErrors()) {
+			return "alterar-endereco";
 		}
 		enderecoService.salvar(endereco);
 		attributes.addFlashAttribute("mensagem", "Endereço salvo com sucesso");
