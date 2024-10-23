@@ -37,7 +37,7 @@ public class AreaController {
 			return "novo-area";
 		}
 		areaService.gravar(area);
-		attributes.addFlashAttribute("mensagem", "Area salva com sucesso");
+		attributes.addFlashAttribute("mensagem", "Área salva com sucesso");
 		return "redirect:/area/novo";
 	}
 	
