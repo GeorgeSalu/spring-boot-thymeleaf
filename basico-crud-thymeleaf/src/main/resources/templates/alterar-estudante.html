@@ -50,6 +50,17 @@
 						</div>
 					</div>
 					
+					<div class="row mb-3">
+						<label class="col-sm-1 col-form-label">Areas:</label>
+						<div class="col-sm-2">
+							<select class="form-select" id="area" name="area">
+								<th:block th:each="ar : ${areas}">
+									<option th:value="${ar.id}" th:text="${ar.descricao}"></option>
+								</th:block>
+							</select>
+						</div>
+					</div>
+					
 					<input class="btn btn-primary" type="submit" value="Gravar">
 				</form>
 			</div>
