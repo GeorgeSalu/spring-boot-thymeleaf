@@ -43,7 +43,6 @@ public class EnderecoController {
 				pagina = "redirect:/";
 			}
 		} catch (EstudanteNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -58,7 +57,6 @@ public class EnderecoController {
 			Estudante estudante = estudanteService.buscarEstudantePorId(idEstudante);
 			endereco.setEstudante(estudante);
 		} catch (EstudanteNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		if(result.hasErrors()) {
