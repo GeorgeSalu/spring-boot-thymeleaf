@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -26,6 +27,9 @@ public class Estudante {
 
 	@OneToOne(mappedBy = "estudante", cascade = CascadeType.ALL)
 	private Endereco endereco;
+
+	@ManyToOne
+	private Area area;
 
 	public Endereco getEndereco() {
 		return endereco;
@@ -59,9 +63,18 @@ public class Estudante {
 		this.idade = idade;
 	}
 
+	public Area getArea() {
+		return area;
+	}
+
+	public void setArea(Area area) {
+		this.area = area;
+	}
+
 	@Override
 	public String toString() {
-		return "Estudante [id=" + id + ", nome=" + nome + ", idade=" + idade + ", endereco=" + endereco + "]";
+		return "Estudante [id=" + id + ", nome=" + nome + ", idade=" + idade + ", endereco=" + endereco + ", area="
+				+ area + "]";
 	}
 
 }

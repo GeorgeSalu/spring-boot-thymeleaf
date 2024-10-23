@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
@@ -19,6 +20,8 @@ public class Area {
 	@NotBlank(message = "A descrição deve ser informado")
 	@Size(min = 2, message = "A descrição deve ter no mínimo 2 caracteres")
 	private String descricao;
+	
+	@OneToMany(mappedBy = "area")
 	private List<Estudante> estudantes;
 
 	public Long getId() {
