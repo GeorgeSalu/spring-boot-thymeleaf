@@ -19,7 +19,7 @@ public class Habilidade {
 
 	@NotBlank(message = "O descrição deve ser informado")
 	@Size(min = 2, message = "O descrição deve ter no mínimo 2 caracteres")
-	private String nome;
+	private String descricao;
 
 	@ManyToMany(mappedBy = "habilidades")
 	private List<Estudante> estudantes;
