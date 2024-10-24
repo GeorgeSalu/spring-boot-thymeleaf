@@ -32,12 +32,12 @@ public class Habilidade {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public List<Estudante> getEstudantes() {
@@ -50,7 +50,7 @@ public class Habilidade {
 
 	@Override
 	public String toString() {
-		return "Habilidade [id=" + id + ", nome=" + nome + ", estudantes=" + estudantes + "]";
+		return "Habilidade [id=" + id + ", descricao=" + descricao + ", estudantes=" + estudantes + "]";
 	}
 
 }
