@@ -16,8 +16,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.app.crud.exception.EstudanteNotFoundException;
 import com.app.crud.modelo.Area;
 import com.app.crud.modelo.Estudante;
+import com.app.crud.modelo.Habilidade;
 import com.app.crud.service.AreaService;
 import com.app.crud.service.EstudanteService;
+import com.app.crud.service.HabilidadeService;
 
 import jakarta.validation.Valid;
 
@@ -29,6 +31,9 @@ public class EstudanteController {
 	
 	@Autowired
 	private AreaService areaService;
+	
+	@Autowired
+	private HabilidadeService habilidadeService;
 
 	@GetMapping("/")
 	public String listarEstudantes(Model model) {
@@ -43,6 +48,9 @@ public class EstudanteController {
 		
 		List<Area> areas = areaService.listar();
 		model.addAttribute("areas", areas);
+		
+		List<Habilidade> habilidades = habilidadeService.buscarTodasHabilidades();
+		model.addAttribute("todasHabilidades", habilidades);
 		
 		return "/novo-estudante";
 	}

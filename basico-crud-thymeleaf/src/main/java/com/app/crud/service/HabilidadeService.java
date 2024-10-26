@@ -1,5 +1,7 @@
 package com.app.crud.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,10 @@ public class HabilidadeService {
 	
 	public Habilidade criarHabilidade(Habilidade habilidade) {
 		return habilidadeRepositorio.save(habilidade);
+	}
+	
+	public List<Habilidade> buscarTodasHabilidades() {
+		return habilidadeRepositorio.findAll();
 	}
 	
 }
