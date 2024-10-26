@@ -72,6 +72,8 @@ public class EstudanteController {
 		if(erros.hasErrors()) {
 			List<Area> areas = areaService.listar();
 			model.addAttribute("areas", areas);
+			List<Habilidade> habilidades = habilidadeService.buscarTodasHabilidades();
+			model.addAttribute("todasHabilidades", habilidades);
 			return "/novo-estudante";
 		}
 		

@@ -66,7 +66,7 @@
 						<label class="col-sm-1 col-form-label">Habilidades</label>
 						<div class="col-sm-12">
 							<th:block th:each="hab : ${todasHabilidades}">
-								<input type="checkbox"
+								<input type="checkbox" name="habilidades"
 								 	th:text="${hab.descricao}"
 								 	th:value="${hab.id}"
 								 	th:field="*{habilidades}"
