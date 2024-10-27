@@ -11,7 +11,7 @@ import com.mballem.curso.boot.domain.Cargo;
 
 @Service
 @Transactional(readOnly = false)
-public class CargoServiceImple implements CargoService {
+public class CargoServiceImpl implements CargoService {
 	
 	@Autowired
 	private CargoDao dao;
