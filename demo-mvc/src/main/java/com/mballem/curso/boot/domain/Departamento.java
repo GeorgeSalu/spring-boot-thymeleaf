@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.persistence.*;
 
-@SuppressWarnings("serial")
+@SuppressWarnings(value = "serial")
 @Entity
 @Table(name = "DEPARTAMENTOS")
 public class Departamento extends AbstractEntity<Long> {
