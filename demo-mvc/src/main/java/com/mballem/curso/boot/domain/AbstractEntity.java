@@ -26,6 +26,7 @@ public abstract class AbstractEntity<ID extends Serializable> implements Seriali
 		return Objects.hash(id);
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
