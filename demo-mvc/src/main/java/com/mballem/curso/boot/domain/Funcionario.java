@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@SuppressWarnings("serial")
+@SuppressWarnings(value = "serial")
 @Entity
 @Table(name = "FUNCIONARIOS")
 public class Funcionario extends AbstractEntity<Long> {
