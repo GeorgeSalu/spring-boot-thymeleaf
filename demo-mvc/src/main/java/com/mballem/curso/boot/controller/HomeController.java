@@ -1,4 +1,4 @@
-package com.mballem.curso.boot.web.controller;
+package com.mballem.curso.boot.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

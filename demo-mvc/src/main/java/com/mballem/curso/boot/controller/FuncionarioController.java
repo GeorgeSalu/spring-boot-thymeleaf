@@ -1,21 +1,21 @@
-package com.mballem.curso.boot.web.controller;
+package com.mballem.curso.boot.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("departamentos")
-public class DepartamentoController {
+@RequestMapping("/funcionarios")
+public class FuncionarioController {
 
 	@GetMapping("/cadastrar")
-	public String cadastro() {
-		return "departamento/cadastro";
+	public String cadastrar() {
+		return "/funcionario/cadastro";
 	}
 	
 	@GetMapping("/listar")
 	public String listar() {
-		return "departamento/lista";
+		return "/funcionario/lista";
 	}
 	
 }
