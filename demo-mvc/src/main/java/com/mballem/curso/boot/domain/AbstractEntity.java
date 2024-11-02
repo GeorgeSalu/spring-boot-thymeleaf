@@ -5,7 +5,7 @@ import java.util.Objects;
 
 import javax.persistence.*;
 
-@SuppressWarnings("serial")
+@SuppressWarnings(value = "serial")
 @MappedSuperclass
 public abstract class AbstractEntity<ID extends Serializable> implements Serializable {
 
