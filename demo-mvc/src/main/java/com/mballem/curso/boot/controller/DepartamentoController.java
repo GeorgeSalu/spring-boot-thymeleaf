@@ -51,7 +51,7 @@ public class DepartamentoController {
 	}
 
 	@GetMapping("/excluir/{id}")
-	public String getMethodName(@PathVariable("id") Long id, ModelMap model) {
+	public String excluir(@PathVariable("id") Long id, ModelMap model) {
 		if (service.departamentoTemCargos(id)) {
 			model.addAttribute("fail", "departamento não removido, possui cargos vindulados.");
 		} else {
