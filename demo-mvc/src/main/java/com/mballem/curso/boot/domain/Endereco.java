@@ -88,10 +88,4 @@ public class Endereco extends AbstractEntity<Long> {
 		this.complemento = complemento;
 	}
 
-	@Override
-	public String toString() {
-		return "Endereco [logradouro=" + logradouro + ", bairro=" + bairro + ", cidade=" + cidade + ", uf=" + uf
-				+ ", cep=" + cep + ", numero=" + numero + ", complemento=" + complemento + "]";
-	}
-
 }
