@@ -40,7 +40,7 @@ public class FuncionarioController {
 	public String salvar(Funcionario funcionario,RedirectAttributes attr) {
 		funcionarioService.salvar(funcionario);
 		attr.addFlashAttribute("success", "funcioario inserido com sucesso");
-		return "redirect:/funcionario/cadastrar";
+		return "redirect:/funcionarios/cadastrar";
 	}
 	
 	@ModelAttribute("cargos")
