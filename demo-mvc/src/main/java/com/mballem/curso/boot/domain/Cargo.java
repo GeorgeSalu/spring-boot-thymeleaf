@@ -48,9 +48,6 @@ public class Cargo extends AbstractEntity<Long> {
 		this.funcionarios = funcionarios;
 	}
 
-	@Override
-	public String toString() {
-		return "Cargo [nome=" + nome + ", departamento=" + departamento + ", funcionarios=" + funcionarios + "]";
-	}
+
 
 }
