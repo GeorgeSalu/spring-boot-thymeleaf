@@ -33,7 +33,7 @@ public class CargoServiceImpl implements CargoService {
 
 	@Transactional(readOnly = true)
 	@Override
-	public Cargo bucarPorId(Long id) {
+	public Cargo buscarPorId(Long id) {
 		return dao.findById(id);
 	}
 
@@ -45,7 +45,7 @@ public class CargoServiceImpl implements CargoService {
 
 	@Override
 	public boolean cargoTemFuncionario(Long id) {
-		if(bucarPorId(id).getFuncionarios().isEmpty()) {
+		if(buscarPorId(id).getFuncionarios().isEmpty()) {
 			return false;
 		}
 		return true;
