@@ -58,6 +58,17 @@ public class CargoController {
 		return "redirect:/cargos/cadastrar";
 	}
 	
+	@GetMapping("/excluir/{id}")
+	public String excluir(@PathVariable("id") Long id,RedirectAttributes attr ) {
+		if(cargoService.cargoTemFuncionario(id)) {
+			attr.addFlashAttribute("fail", "cargo não excluido, tem funcionarios vinculados");
+		} else {
+			cargoService.excluir(id);
+			attr.addFlashAttribute("success", "cargo excluido com sucesso");
+		}
+		return "redirect:/cargos/listar";
+	}
+	
 	@ModelAttribute("departamentos")
 	public List<Departamento> listaDeDepartamentos() {
 		return departamentoService.buscarTodos();
