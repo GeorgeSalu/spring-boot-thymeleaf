@@ -1,1 +1,1 @@
-## Spring Boot, Spring MVC e Thymeleaf
+## Spring Boot, Spring MVC e Thymeleaf/Jquery
