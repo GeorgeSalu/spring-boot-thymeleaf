@@ -9,4 +9,4 @@
 - HTML, CSS e Bootstrap 
 - SQL e HQL/JPQL
 - Hibernate e JPA 
-- JavaScript
+- JavaScript/Jquery
