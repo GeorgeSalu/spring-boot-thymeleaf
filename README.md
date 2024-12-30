@@ -1,1 +1,1 @@
-## Spring Boot, Spring MVC, Spring Security e Thymeleaf (layouts e fragmentos)
+## Spring Boot, Spring MVC, Spring Security, MySQL e Thymeleaf (layouts e fragmentos)
