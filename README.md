@@ -1,1 +1,8 @@
-## Spring Boot, Spring MVC, Spring Security, MySQL, jQuery AJAX e Thymeleaf (layouts e fragmentos)
+# Spring Boot e Thymeleaf 
+
+## Tecnologias
+
+- Spring MVC
+- Spring Security
+- MySQL
+- Thymeleaf (layouts e fragmentos)
