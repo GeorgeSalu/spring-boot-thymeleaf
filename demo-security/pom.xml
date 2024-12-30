@@ -14,7 +14,7 @@
 	<artifactId>demo-security</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>demo-security</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Spring Boot & MVC com Spring Security</description>
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
