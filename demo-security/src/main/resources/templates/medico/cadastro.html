@@ -2,10 +2,9 @@
 <html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
 	layout:decorate="~{layout}">
 <head>
-<meta charset="UTF-8" />
+	<meta charset="UTF-8" />
 </head>
 <body>
-
 	<section class="layout-content" layout:fragment="corpo">
 		<main role="main">
 		
@@ -31,8 +30,7 @@
 								<div class="form-group col-md-6">
 									<label for="nome" class="form-group">Nome Completo</label>
 									<input type="text" class="form-control"
-										th:field="*{nome}" id="nome" placeholder="João da Silva"
-										required/>
+										th:field="*{nome}" id="nome" placeholder="João da Silva" required/>
 									<div class="invalid-feedback">Nome completo é requerido.</div>
 								</div>
 							</div>
@@ -45,8 +43,7 @@
 								</div>
 								<div class="form-group col-md-6">
 									<label for="dtInscricao">Data da Inscrição</label> 
-									<input
-										type="date" class="form-control" id="dtInscricao"
+									<input type="date" class="form-control" id="dtInscricao"
 										th:field="*{dtInscricao}" required />
 									<div class="invalid-feedback">Data de Inscrição CRM é requerida.</div>	
 								</div>
@@ -57,9 +54,9 @@
 									<label for="autocomplete-especialidades">Especialidade(s)</label>
 									<input type="text" id="autocomplete-especialidades"
 										class="form-control" placeholder="suas especialidade são..." /> 
-									<small class="form-text text-muted">Insira suas
-										especialidades médicas.</small>
-										
+									<small class="form-text text-muted">
+										Insira suas especialidades médicas.
+									</small>	
 								</div>
 							</div>							
 							<div id='listaEspecializacoes'>
