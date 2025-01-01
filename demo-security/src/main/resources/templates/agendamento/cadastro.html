@@ -25,13 +25,13 @@
 					
 						<div th:replace="fragments/alert :: alerta-sucesso"></div>
 												
-						<form th:action="@{/agendamentos/salvar}" th:object="${agendamento}"
-							method="POST" class="was-validated">
+						<form th:action="@{/agendamentos/salvar}" th:object="${agendamento}" method="POST" class="was-validated">
 							
 							<div class="form-row">
 								<div class="form-group col-md-12">
-									<small class="form-text text-muted">Selecione 
-										a especialidade médica referente a sua consulta.</small>
+									<small class="form-text text-muted">
+										Selecione a especialidade médica referente a sua consulta.
+									</small>
 									<input type="text" class="form-control"
 										id="especialidade" placeholder="Pediatria"
 										th:field="*{especialidade.titulo}" required />
@@ -56,8 +56,9 @@
 							
 							<div class="form-row">								
 								<div class="form-group col-md-12">
-									<small class="form-text text-muted">Selecione 
-										a data da consulta</small>
+									<small class="form-text text-muted">
+										Selecione a data da consulta
+									</small>
 									<input class="form-control" type="date" id="data" 
 										th:field="*{dataConsulta}" required/>
 									<div class="invalid-feedback">
@@ -68,8 +69,9 @@
 							
 							<div class="form-row">
 								<div class="form-group col-md-12">
-									<small id="hr-small" class="form-text text-muted">Horários disponíveis
-										para a consulta</small>
+									<small id="hr-small" class="form-text text-muted">
+										Horários disponíveis para a consulta
+									</small>
 									<select id="horarios" class="custom-select" size="5" 
 										th:field="*{horario.id}" required>
 									  	<option th:value="*{horario.id}" 
