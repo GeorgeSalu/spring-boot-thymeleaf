@@ -7,6 +7,7 @@
 - Servlet
 - MySQL
 - Thymeleaf
+- Freemarker
 - Thymeleaf (layouts e fragmentos)
 - HTML, CSS e Bootstrap 
 - SQL e HQL/JPQL
