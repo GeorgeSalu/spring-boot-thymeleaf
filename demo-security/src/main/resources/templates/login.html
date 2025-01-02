@@ -33,8 +33,7 @@
 <body>
 	<form class="form-signin was-validated" method="post" th:action="@{/login}">
 		<div class="text-center mb-4">
-			<img class="mb-4" th:src="@{/image/spring-security.png}" alt=""
-				width="72" height="72">
+			<img class="mb-4" th:src="@{/image/spring-security.png}" alt="" width="72" height="72">
 			<h1 class="h3 mb-3 font-weight-normal">Clínica Spring Security</h1>
 
 			<p class="font-weight-lighter">Seja bem-vindo.</p>
@@ -43,7 +42,9 @@
 			  <h4 th:text="${titulo}" class="alert-heading">Credenciais...</h4>
 			  <p th:text="${texto}">Login ou senha incorretos...</p>
 			  <hr>
-			  <p class="mb-0"><small th:text="${subtexto}">Acesso permitido...</small></p>
+			  <p class="mb-0">
+			  	<small th:text="${subtexto}">Acesso permitido...</small>
+			  </p>
 			</div>
 		</div>
 
