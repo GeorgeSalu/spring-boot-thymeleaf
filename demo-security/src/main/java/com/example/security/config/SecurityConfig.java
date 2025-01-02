@@ -19,6 +19,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		
 		http.authorizeRequests()
+				// liberando acesso as seguintes urls
 				.antMatchers("/webjars/**", "/css/**", "/image/**", "/js/**").permitAll()
 				.antMatchers("/", "/home").permitAll()
 				.anyRequest().authenticated()
