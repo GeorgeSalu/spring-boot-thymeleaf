@@ -1,6 +1,9 @@
 package com.example.security.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,5 +32,15 @@ public class EspecialidadeController {
 		attr.addFlashAttribute("sucesso", "Operacao realizada com sucesso");
 		return "redirect:/especialidades";
 	}
+
+	@GetMapping("/datatables/server")
+	public ResponseEntity<?> getEspecialidades(HttpServletRequest request) {
+		
+		return ResponseEntity.ok(service.buscarEspecialidades(request));
+	}
 	
 }
+
+
+
+
