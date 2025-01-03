@@ -1,6 +1,6 @@
-# Spring Boot e Thymeleaf 
+# FullStack Web Spring Boot 
 
-## Tecnologias usadas
+## Tecnologias usadas:
 
 - Spring MVC
 - Spring Security
