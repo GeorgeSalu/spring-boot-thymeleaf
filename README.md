@@ -6,7 +6,7 @@
 - Spring Security
 - Servlet
 - MySQL
-- Thymeleaf/Freemarker
+- Thymeleaf/FreeMarker
 - Thymeleaf (layouts e fragmentos)
 - HTML, CSS e Bootstrap 
 - SQL e HQL/JPQL
