@@ -11,5 +11,5 @@
 - HTML, CSS e Bootstrap 
 - SQL e HQL/JPQL
 - Hibernate e JPA 
-- JavaScript/Jquery
+- JavaScript/Jquery/htmx
 - Ajax (Asynchronous JavaScript and XML)
