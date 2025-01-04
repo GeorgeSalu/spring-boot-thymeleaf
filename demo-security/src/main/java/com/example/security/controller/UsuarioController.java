@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -54,8 +55,14 @@ public class UsuarioController {
 			attr.addFlashAttribute("usuario", usuario);
 			
 		} else {
-			service.salvarUsuario(usuario);
-			attr.addFlashAttribute("sucesso", "Operacao realizada com sucesso");
+			
+			try {
+				service.salvarUsuario(usuario);
+				attr.addFlashAttribute("sucesso", "Operacao realizada com sucesso");
+			} catch (DataIntegrityViolationException e) {
+				attr.addFlashAttribute("falha", "Cadastro nao realizado, email ja existente");
+			}
+
 		}
 		
 		return "redirect:/u/novo/cadastro/usuario";
