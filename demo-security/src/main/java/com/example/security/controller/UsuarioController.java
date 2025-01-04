@@ -47,8 +47,8 @@ public class UsuarioController {
 		
 		List<Perfil> perfis = usuario.getPerfis();
 		
-		if(perfis.size() > 2 || perfis.contains(Arrays.asList(new Perfil(1L), new Perfil(3L))) || 
-				perfis.contains(Arrays.asList(new Perfil(2L), new Perfil(3L)))) {
+		if(perfis.size() > 2 || perfis.containsAll(Arrays.asList(new Perfil(1L), new Perfil(3L))) || 
+				perfis.containsAll(Arrays.asList(new Perfil(2L), new Perfil(3L)))) {
 			
 			attr.addFlashAttribute("falha", "Paciente nao pode ser Admin e ou Medico");
 			attr.addFlashAttribute("usuario", usuario);
