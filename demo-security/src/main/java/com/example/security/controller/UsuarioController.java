@@ -73,7 +73,6 @@ public class UsuarioController {
 	@GetMapping("/editar/credenciais/usuario/{id}")
 	public ModelAndView preEditarCredenciais(@PathVariable("id") Long id) {
 		
-		
 		return new ModelAndView("usuario/cadastro", "usuario", service.buscarPorId(id));
 	}
 	
