@@ -20,13 +20,13 @@ public class MedicoService {
 					.orElse(new Medico());
 	}
 
-	@Transactional(readOnly = true)
+	@Transactional(readOnly = false)
 	public void salvar(Medico medico) {
 		
 		repository.save(medico);
 	}
 
-	@Transactional(readOnly = true)
+	@Transactional(readOnly = false)
 	public void editar(Medico medico) {
 
 		Medico m2 = repository.findById(medico.getId()).get();
