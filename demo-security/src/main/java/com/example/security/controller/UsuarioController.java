@@ -91,7 +91,7 @@ public class UsuarioController {
 			return new ModelAndView("especialidade/especialidade");
 		} else if (us.getPerfis().contains(new Perfil(PerfilTipo.PACIENTE.getCod()))) {
 			
-			ModelAndView model = new ModelAndView();
+			ModelAndView model = new ModelAndView("error");
 			model.addObject("status", 403);
 			model.addObject("error", "Area restrita");
 			model.addObject("message", "Os dados de pacientes são restritos a ele.");
