@@ -1,6 +1,8 @@
 package com.example.security.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.security.domain.Medico;
+import com.example.security.domain.Usuario;
 import com.example.security.service.MedicoService;
+import com.example.security.service.UsuarioService;
 
 @Controller
 @RequestMapping("medicos")
@@ -17,6 +21,9 @@ public class MedicoController {
 	
 	@Autowired
 	private MedicoService medicoService;
+	
+	@Autowired
+	private UsuarioService usuarioService;
 
 	@GetMapping({"/dados"})
 	public String abrirPorMedico(Medico medico,ModelMap model) {
@@ -25,7 +32,12 @@ public class MedicoController {
 	}
 	
 	@PostMapping({"/salvar"})
-	public String salvar(Medico medico,RedirectAttributes attr) {
+	public String salvar(Medico medico,RedirectAttributes attr, @AuthenticationPrincipal User user) {
+		
+		if(medico.hasNotId() && medico.getUsuario().hasNotId()) {
+			Usuario usuario = usuarioService.buscarPorEmail(user.getUsername());
+			medico.setUsuario(usuario);
+		}
 		
 		medicoService.salvar(medico);
 		attr.addFlashAttribute("sucesso", "Operacao realizada com sucesso");
