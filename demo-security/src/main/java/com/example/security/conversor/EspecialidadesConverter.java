@@ -14,7 +14,7 @@ import com.example.security.service.EspecialidadeService;
 public class EspecialidadesConverter implements Converter<String[], Set<Especialidade>>{
 
 	@Autowired
-	private EspecialidadeService service;
+	private EspecialidadeService especialidadeService;
 	
 	@Override
 	public Set<Especialidade> convert(String[] titulos) {
@@ -22,7 +22,7 @@ public class EspecialidadesConverter implements Converter<String[], Set<Especial
 		Set<Especialidade> especialidades = new HashSet<Especialidade>();
 		
 		if(titulos != null && titulos.length > 0) {
-			especialidades.addAll(service.buscarPorTitulo(titulos));
+			especialidades.addAll(especialidadeService.buscarPorTitulo(titulos));
 		}
 		
 		return especialidades;
