@@ -14,7 +14,7 @@ public interface EspecialidadeRepository extends JpaRepository<Especialidade, Lo
 	@Query("select e from Especialidade e where e.titulo like :search%")
 	Page<Especialidade> findAllByTitulo(String search, Pageable pageable);
 
-	@Query("select e.titulo fro Especialidade e where e.titulo like :termo%")
+	@Query("select e.titulo from Especialidade e where e.titulo like :termo%")
 	List<String> findEspecialidadeByTermo(String termo);
 
 }
