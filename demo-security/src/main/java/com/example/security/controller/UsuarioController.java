@@ -77,7 +77,7 @@ public class UsuarioController {
 		return new ModelAndView("usuario/cadastro", "usuario", service.buscarPorId(id));
 	}
 	
-	@GetMapping("/editar/dados/usuario/{id}/perfis/[perfis]")
+	@GetMapping("/editar/dados/usuario/{id}/perfis/{perfis}")
 	public ModelAndView preEditarCadastroDadosPessoais(@PathVariable("id") Long usuarioId,
 													   @PathVariable("perfis") Long[] perfisId) {
 		
