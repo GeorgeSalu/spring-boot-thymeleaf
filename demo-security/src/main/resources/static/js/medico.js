@@ -1,3 +1,4 @@
+// processa o auto-complete
 $(function() {
 	// remove o espaco depois da virgula
 	function split(val) {
