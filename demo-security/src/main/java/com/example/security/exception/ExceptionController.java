@@ -10,7 +10,7 @@ public class ExceptionController {
 
 	@ExceptionHandler(UsernameNotFoundException.class)
 	public ModelAndView usuarioNaoEncontradoException(UsernameNotFoundException ex) {
-		ModelAndView model = new ModelAndView();
+		ModelAndView model = new ModelAndView("error");
 		model.addObject("status", 404);
 		model.addObject("error", "Operacao nao pode ser realizada");
 		model.addObject("message", ex.getMessage());
