@@ -1,7 +1,9 @@
 package com.example.security.service;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -59,6 +61,12 @@ public class EspecialidadeService {
 	public List<String> buscarEspecialidadeByTermo(String termo) {
 		
 		return repository.findEspecialidadeByTermo(termo);
+	}
+
+	@Transactional(readOnly = true)
+	public Set<Especialidade> buscarPorTitulo(String[] titulos) {
+		
+		return repository.findByTitulos(titulos);
 	}
 
 }
