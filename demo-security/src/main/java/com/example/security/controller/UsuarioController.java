@@ -139,7 +139,7 @@ public class UsuarioController {
 		}
 		
 		service.alterarSenha(u, s1);
-		attr.addFlashAttribute("sucesso", "Senhas alterda com sucesso");
+		attr.addFlashAttribute("sucesso", "Senhas alterada com sucesso");
 		
 		return "redirect:/u/editar/senha";
 	}
