@@ -26,35 +26,24 @@ public class PacienteController {
 	
 	@GetMapping("/dados")
 	public String cadastrar(Paciente paciente,ModelMap model,@AuthenticationPrincipal User user) {
-		
 		paciente = service.buscarPorUsuarioEmail(user.getUsername());
-		
 		if(paciente.hasNotId()) {
 			paciente.setUsuario(new Usuario(user.getUsername()));
 		}
-		
 		model.addAttribute("paciente", paciente);
-		
 		return "paciente/cadastro";
 	}
 	
 	@PostMapping("/salvar")
 	public String salvar(Paciente paciente,ModelMap model,@AuthenticationPrincipal User user) {
-		
 		Usuario u = usuarioService.buscarPorEmail(user.getUsername());
-		
 		if(UsuarioService.isSenhaCorreta(paciente.getUsuario().getSenha(), u.getSenha())) {
-			
 			paciente.setUsuario(u);
-			
 			service.salvar(paciente);
 			model.addAttribute("sucesso", "Seus dados foram inseridos com sucesso");
-			
 		} else {
 			model.addAttribute("falha", "Sua senha nao confere, tente novamente");
 		}
-		
-		
 		return "paciente/cadastro";
 	}
 	
