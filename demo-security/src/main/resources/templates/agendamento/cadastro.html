@@ -31,8 +31,7 @@
 									<small class="form-text text-muted">
 										Selecione a especialidade médica referente a sua consulta.
 									</small>
-									<input type="text" class="form-control"
-										id="especialidade" placeholder="Pediatria"
+									<input type="text" class="form-control" id="especialidade" placeholder="Pediatria"
 										th:field="*{especialidade.titulo}" required />
 									<div class="invalid-feedback">
 								      Especialidade é obrigatória.
@@ -58,8 +57,7 @@
 									<small class="form-text text-muted">
 										Selecione a data da consulta
 									</small>
-									<input class="form-control" type="date" id="data" 
-										th:field="*{dataConsulta}" required/>
+									<input class="form-control" type="date" id="data" th:field="*{dataConsulta}" required/>
 									<div class="invalid-feedback">
 								      Data é obrigatória.
 								    </div>	
@@ -73,8 +71,7 @@
 									</small>
 									<select id="horarios" class="custom-select" size="5" 
 										th:field="*{horario.id}" required>
-									  	<option th:value="*{horario.id}" 
-									  			th:text="*{horario.horaMinuto}"></option>
+									  	<option th:value="*{horario.id}" th:text="*{horario.horaMinuto}"></option>
 									</select>
 									<div class="invalid-feedback">Horário é obrigatório</div>
 								</div>
