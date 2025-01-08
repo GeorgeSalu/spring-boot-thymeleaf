@@ -23,7 +23,7 @@ import com.example.security.service.EspecialidadeService;
 public class EspecialidadeController {
 
 	@Autowired
-	private EspecialidadeService service;
+	private EspecialidadeService especialidadeService;
 	
 	@GetMapping({"", "/"})
 	public String abrir(Especialidade especialidade) {
@@ -33,7 +33,7 @@ public class EspecialidadeController {
 	
 	@PostMapping("/salvar")
 	public String salvar(Especialidade especialidade, RedirectAttributes attr) {
-		service.salvar(especialidade);
+		especialidadeService.salvar(especialidade);
 		attr.addFlashAttribute("sucesso", "Operacao realizada com sucesso");
 		return "redirect:/especialidades";
 	}
@@ -41,20 +41,20 @@ public class EspecialidadeController {
 	@GetMapping("/datatables/server")
 	public ResponseEntity<?> getEspecialidades(HttpServletRequest request) {
 		
-		return ResponseEntity.ok(service.buscarEspecialidades(request));
+		return ResponseEntity.ok(especialidadeService.buscarEspecialidades(request));
 	}
 	
 	@GetMapping("/editar/{id}")
 	public String preEditar(@PathVariable("id") Long id,ModelMap model) {
 		
-		model.addAttribute("especialidade", service.buscaPorId(id));
+		model.addAttribute("especialidade", especialidadeService.buscaPorId(id));
 		
 		return "especialidade/especialidade";
 	}
 	
 	@GetMapping("/excluir/{id}")
 	public String excluir(@PathVariable("id") Long id,RedirectAttributes attr) {
-		service.remover(id);
+		especialidadeService.remover(id);
 		attr.addFlashAttribute("sucesso", "Operação realizada com sucesso");
 		
 		return "redirect:/especialidades";
@@ -63,7 +63,7 @@ public class EspecialidadeController {
 	@GetMapping("/titulo")
 	public ResponseEntity<?> getEspecialidadesPorTermo(@RequestParam("termo") String termo) {
 		
-		List<String> especialidades = service.buscarEspecialidadeByTermo(termo);
+		List<String> especialidades = especialidadeService.buscarEspecialidadeByTermo(termo);
 		
 		return ResponseEntity.ok(especialidades);
 	}
@@ -73,7 +73,7 @@ public class EspecialidadeController {
 		
 		
 		
-		return ResponseEntity.ok(service.buscarEspecialidadesPorMedico(id, request));
+		return ResponseEntity.ok(especialidadeService.buscarEspecialidadesPorMedico(id, request));
 	}
 	
 }
