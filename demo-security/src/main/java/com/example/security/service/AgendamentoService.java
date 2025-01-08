@@ -17,18 +17,18 @@ import com.example.security.repository.AgendamentoRepository;
 public class AgendamentoService {
 	
 	@Autowired
-	private AgendamentoRepository repository;
+	private AgendamentoRepository agendamentoRepository;
 
 	@Transactional(readOnly = true)
 	public List<Horario> buscarHorarioNaoAgendadosPorMedicoIdEData(Long id, LocalDate data) {
 
-		return repository.findByMedicoIdAndDataNotHorarioAgendado(id, data);
+		return agendamentoRepository.findByMedicoIdAndDataNotHorarioAgendado(id, data);
 	}
 
 	@Transactional(readOnly = false)
 	public void salvar(Agendamento agendamento) {
 		
-		repository.save(agendamento);
+		agendamentoRepository.save(agendamento);
 	}
 
 	@Transactional(readOnly = true)
