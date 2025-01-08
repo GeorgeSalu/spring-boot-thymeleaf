@@ -19,14 +19,14 @@ import com.example.security.service.UsuarioService;
 public class PacienteController {
 
 	@Autowired
-	private PacienteService service;
+	private PacienteService pacienteService;
 	
 	@Autowired
 	private UsuarioService usuarioService;
 	
 	@GetMapping("/dados")
 	public String cadastrar(Paciente paciente,ModelMap model,@AuthenticationPrincipal User user) {
-		paciente = service.buscarPorUsuarioEmail(user.getUsername());
+		paciente = pacienteService.buscarPorUsuarioEmail(user.getUsername());
 		if(paciente.hasNotId()) {
 			paciente.setUsuario(new Usuario(user.getUsername()));
 		}
@@ -39,7 +39,7 @@ public class PacienteController {
 		Usuario u = usuarioService.buscarPorEmail(user.getUsername());
 		if(UsuarioService.isSenhaCorreta(paciente.getUsuario().getSenha(), u.getSenha())) {
 			paciente.setUsuario(u);
-			service.salvar(paciente);
+			pacienteService.salvar(paciente);
 			model.addAttribute("sucesso", "Seus dados foram inseridos com sucesso");
 		} else {
 			model.addAttribute("falha", "Sua senha nao confere, tente novamente");
@@ -51,7 +51,7 @@ public class PacienteController {
 	public String editar(Paciente paciente,ModelMap model,@AuthenticationPrincipal User user) {
 		Usuario u = usuarioService.buscarPorEmail(user.getUsername());
 		if(UsuarioService.isSenhaCorreta(paciente.getUsuario().getSenha(), u.getSenha())) {
-			service.editar(paciente);
+			pacienteService.editar(paciente);
 			model.addAttribute("sucesso", "Seus dados foram inseridos com sucesso");
 		} else {
 			model.addAttribute("falha", "Sua senha nao confere, tente novamente");
