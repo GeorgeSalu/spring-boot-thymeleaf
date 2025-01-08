@@ -26,14 +26,14 @@ import com.example.security.repository.UsuarioRepository;
 public class UsuarioService implements UserDetailsService {
 
 	@Autowired
-	private UsuarioRepository repository;
+	private UsuarioRepository usuarioRepository;
 	
 	@Autowired
 	private Datatables datatables;
 	
 	@Transactional(readOnly = true)
 	public Usuario buscarPorEmail(String email) {
-		return repository.findByEmail(email);
+		return usuarioRepository.findByEmail(email);
 	}
 	
 	@Transactional(readOnly = true)
@@ -65,8 +65,8 @@ public class UsuarioService implements UserDetailsService {
 		datatables.setColunas(DatatablesColunas.USUARIOS);
 		
 		Page<Usuario> page = datatables.getSearch().isEmpty()
-				? repository.findAll(datatables.getPageable())
-				: repository.findByEmailOrPerfil(datatables.getSearch(), datatables.getPageable());
+				? usuarioRepository.findAll(datatables.getPageable())
+				: usuarioRepository.findByEmailOrPerfil(datatables.getSearch(), datatables.getPageable());
 		
 		return datatables.getResponse(page);
 	}
@@ -77,19 +77,19 @@ public class UsuarioService implements UserDetailsService {
 		String crypt = new BCryptPasswordEncoder().encode(usuario.getSenha());
 		
 		usuario.setSenha(crypt);
-		repository.save(usuario);
+		usuarioRepository.save(usuario);
 	}
 
 	@Transactional(readOnly = true)
     public Usuario buscarPorId(Long id) {
 
-		return repository.findById(id).get();
+		return usuarioRepository.findById(id).get();
     }
 
 	@Transactional(readOnly = true)
 	public Usuario buscarPorIdEPerfis(Long usuarioId, Long[] perfisId) {
 
-		return repository.findByIdAndPerfis(usuarioId, perfisId)
+		return usuarioRepository.findByIdAndPerfis(usuarioId, perfisId)
 				.orElseThrow(() -> new UsernameNotFoundException("usuario inexistente"));
 	}
 
@@ -103,7 +103,7 @@ public class UsuarioService implements UserDetailsService {
 		
 		usuario.setSenha(new BCryptPasswordEncoder().encode(senha));
 		
-		repository.save(usuario);
+		usuarioRepository.save(usuario);
 	}
 }
 
