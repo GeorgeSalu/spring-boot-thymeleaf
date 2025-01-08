@@ -31,7 +31,7 @@ import com.example.security.service.UsuarioService;
 public class UsuarioController {
 	
 	@Autowired
-	private UsuarioService service;
+	private UsuarioService usuarioService;
 	
 	@Autowired
 	private MedicoService medicoService;
@@ -51,7 +51,7 @@ public class UsuarioController {
 	@GetMapping("/datatables/server/usuarios")
 	public ResponseEntity<?> listarUsuarioDatatables(HttpServletRequest request) {
 		
-		return ResponseEntity.ok(service.buscarTodos(request));
+		return ResponseEntity.ok(usuarioService.buscarTodos(request));
 	}
 	
 	@PostMapping("/cadastro/salvar")
@@ -68,7 +68,7 @@ public class UsuarioController {
 		} else {
 			
 			try {
-				service.salvarUsuario(usuario);
+				usuarioService.salvarUsuario(usuario);
 				attr.addFlashAttribute("sucesso", "Operacao realizada com sucesso");
 			} catch (DataIntegrityViolationException e) {
 				attr.addFlashAttribute("falha", "Cadastro nao realizado, email ja existente");
@@ -82,14 +82,14 @@ public class UsuarioController {
 	@GetMapping("/editar/credenciais/usuario/{id}")
 	public ModelAndView preEditarCredenciais(@PathVariable("id") Long id) {
 		
-		return new ModelAndView("usuario/cadastro", "usuario", service.buscarPorId(id));
+		return new ModelAndView("usuario/cadastro", "usuario", usuarioService.buscarPorId(id));
 	}
 	
 	@GetMapping("/editar/dados/usuario/{id}/perfis/{perfis}")
 	public ModelAndView preEditarCadastroDadosPessoais(@PathVariable("id") Long usuarioId,
 													   @PathVariable("perfis") Long[] perfisId) {
 		
-		Usuario us = service.buscarPorIdEPerfis(usuarioId, perfisId);
+		Usuario us = usuarioService.buscarPorIdEPerfis(usuarioId, perfisId);
 		
 		if(us.getPerfis().contains(new Perfil(PerfilTipo.ADMIN.getCod())) && !us.getPerfis().contains(new Perfil(PerfilTipo.MEDICO.getCod())) ) {
 			
@@ -131,14 +131,14 @@ public class UsuarioController {
 			return "redirect:/u/editar/senha";
 		}
 		
-		Usuario u = service.buscarPorEmail(user.getUsername());
+		Usuario u = usuarioService.buscarPorEmail(user.getUsername());
 		
 		if(!UsuarioService.isSenhaCorreta(s3, u.getSenha())) {
 			attr.addFlashAttribute("falha", "Senhas atual nao confere, tente novamente");
 			return "redirect:/u/editar/senha";
 		}
 		
-		service.alterarSenha(u, s1);
+		usuarioService.alterarSenha(u, s1);
 		attr.addFlashAttribute("sucesso", "Senhas alterada com sucesso");
 		
 		return "redirect:/u/editar/senha";
