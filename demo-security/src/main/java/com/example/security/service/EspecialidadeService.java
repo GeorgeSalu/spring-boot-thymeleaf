@@ -20,7 +20,7 @@ import com.example.security.repository.EspecialidadeRepository;
 public class EspecialidadeService {
 
 	@Autowired
-	private EspecialidadeRepository repository;
+	private EspecialidadeRepository especialidadeRepository;
 	
 	@Autowired
 	private Datatables datatables;
@@ -28,7 +28,7 @@ public class EspecialidadeService {
 	@Transactional(readOnly = false)
 	public void salvar(Especialidade especialidade) {
 		
-		repository.save(especialidade);
+		especialidadeRepository.save(especialidade);
 	}
 
 	@Transactional(readOnly = true)
@@ -38,8 +38,8 @@ public class EspecialidadeService {
 		datatables.setColunas(DatatablesColunas.ESPECIALIDADES);
 		
 		Page<?> page = datatables.getSearch().isEmpty() 
-				? repository.findAll(datatables.getPageable()) 
-				: repository.findAllByTitulo(datatables.getSearch(), datatables.getPageable());
+				? especialidadeRepository.findAll(datatables.getPageable()) 
+				: especialidadeRepository.findAllByTitulo(datatables.getSearch(), datatables.getPageable());
 		
 		return datatables.getResponse(page);
 	}
@@ -47,25 +47,25 @@ public class EspecialidadeService {
 	@Transactional(readOnly = true)
 	public Especialidade buscaPorId(Long id) {
 
-		return repository.findById(id).get();
+		return especialidadeRepository.findById(id).get();
 	}
 
 	@Transactional(readOnly = false)
 	public void remover(Long id) {
 
-		repository.deleteById(id);
+		especialidadeRepository.deleteById(id);
 	}
 
 	@Transactional(readOnly = true)
 	public List<String> buscarEspecialidadeByTermo(String termo) {
 		
-		return repository.findEspecialidadeByTermo(termo);
+		return especialidadeRepository.findEspecialidadeByTermo(termo);
 	}
 
 	@Transactional(readOnly = true)
 	public Set<Especialidade> buscarPorTitulo(String[] titulos) {
 		
-		return repository.findByTitulos(titulos);
+		return especialidadeRepository.findByTitulos(titulos);
 	}
 
 	@Transactional(readOnly = true)
@@ -74,7 +74,7 @@ public class EspecialidadeService {
 		datatables.setRequest(request);
 		datatables.setColunas(DatatablesColunas.ESPECIALIDADES);
 		
-		Page<Especialidade> page = repository.findByIdMedico(id, datatables.getPageable());
+		Page<Especialidade> page = especialidadeRepository.findByIdMedico(id, datatables.getPageable());
 
 		return datatables.getResponse(page);
 	}
