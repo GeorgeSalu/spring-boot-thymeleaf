@@ -60,4 +60,10 @@ public class AgendamentoService {
 		return datatables.getResponse(page);
 	}
 
+	@Transactional(readOnly = true)
+	public Agendamento buscarPorId(Long id) {
+
+		return agendamentoRepository.findById(id).get();
+	}
+
 }
