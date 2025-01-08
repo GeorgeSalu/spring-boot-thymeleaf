@@ -33,13 +33,13 @@ public class AgendamentoService {
 
 	@Transactional(readOnly = true)
 	public Object buscarHistoricoPorPacienteEmail(String username, HttpServletRequest request) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Transactional(readOnly = true)
 	public Object buscarHistoricoPorMedicoEmail(String username, HttpServletRequest request) {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
