@@ -15,6 +15,7 @@ import com.example.security.datatables.Datatables;
 import com.example.security.datatables.DatatablesColunas;
 import com.example.security.domain.Agendamento;
 import com.example.security.domain.Horario;
+import com.example.security.exception.AcessoNegadoException;
 import com.example.security.repository.AgendamentoRepository;
 import com.example.security.repository.projection.HistoricoPaciente;
 
@@ -67,14 +68,21 @@ public class AgendamentoService {
 	}
 
 	@Transactional(readOnly = false)
-	public void editar(Agendamento agendamento, String username) {
+	public void editar(Agendamento agendamento, String email) {
 		
-		Agendamento ag = buscarPorId(agendamento.getId());
+		Agendamento ag = buscarPorIdEUsuario(agendamento.getId(), email);
 		ag.setDataConsulta(agendamento.getDataConsulta());
 		ag.setEspecialidade(agendamento.getEspecialidade());
 		ag.setHorario(agendamento.getHorario());
 		ag.setMedico(agendamento.getMedico());
 		
+	}
+
+	@Transactional(readOnly = true)
+	public Agendamento buscarPorIdEUsuario(Long id, String email) {
+
+		return agendamentoRepository.findByIdAndPacienteOrMedicoEmail(id, email)
+				.orElseThrow(() -> new AcessoNegadoException("acesso negado ao usuario "+email));
 	}
 
 }
