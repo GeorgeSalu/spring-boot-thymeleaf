@@ -20,7 +20,6 @@ public class AgendamentoService {
 	@Transactional(readOnly = true)
 	public List<Horario> buscarHorarioNaoAgendadosPorMedicoIdEData(Long id, LocalDate data) {
 
-		
 		return repository.findByMedicoIdAndDataNotHorarioAgendado(id, data);
 	}
 
