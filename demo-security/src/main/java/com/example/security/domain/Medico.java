@@ -11,10 +11,14 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@SuppressWarnings("serial")
 @Entity
 @Table(name = "medicos")
 public class Medico extends AbstractEntity {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4762216807284203143L;
 
 	@Column(name = "nome", unique = true, nullable = false)
 	private String nome;
