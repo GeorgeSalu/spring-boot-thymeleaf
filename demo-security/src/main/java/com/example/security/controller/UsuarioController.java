@@ -144,6 +144,18 @@ public class UsuarioController {
 		return "redirect:/u/editar/senha";
 	}
 	
+	@GetMapping("/novo/cadastro")
+	public String novoCadastro(Usuario usuario) {
+		
+		return "cadastrar-se";
+	}
+	
+	@GetMapping("/cadastro/realizado")
+	public String cadastroRealizado() {
+		
+		return "fragments/mensagem";
+	}
+	
 }
 
 
