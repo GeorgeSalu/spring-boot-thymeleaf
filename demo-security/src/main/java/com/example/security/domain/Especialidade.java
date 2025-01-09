@@ -4,11 +4,15 @@ import java.util.List;
 
 import javax.persistence.*;
 
-@SuppressWarnings("serial")
 @Entity
 @Table(name = "especialidades", indexes = {@Index(name = "idx_especialidade_titulo", columnList = "titulo")})
 public class Especialidade extends AbstractEntity {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7827591344894341478L;
+
 	@Column(name = "titulo", unique = true, nullable = false)
 	private String titulo;
 	
