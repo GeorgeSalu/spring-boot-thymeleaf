@@ -8,10 +8,14 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
-@SuppressWarnings("serial")
 @Entity
 @Table(name = "pacientes")
 public class Paciente extends AbstractEntity {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4371944356166653414L;
 
 	@Column(name = "nome", unique = true, nullable = false)
 	private String nome;
