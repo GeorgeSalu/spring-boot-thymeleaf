@@ -67,8 +67,12 @@ public class MedicoController {
 	public String excluirEspecialidadePorMedico(@PathVariable("idMed") Long idMed,
 												@PathVariable("idEsp") Long idEsp,RedirectAttributes attr) {
 		
-		medicoService.excluirEspecialidadePorMedico(idMed, idEsp);
-		attr.addFlashAttribute("sucesso", "Especialidade removida com sucesso");
+		if(medicoService.existeEspecialidadeAgendada(idMed, idEsp)) {
+			attr.addFlashAttribute("falha", "Tem consultas agendadas, exclusao negada");
+		} else {
+			medicoService.excluirEspecialidadePorMedico(idMed, idEsp);
+			attr.addFlashAttribute("sucesso", "Especialidade removida com sucesso");
+		}
 		
 		return "redirect:/medicos/dados";
 	}
