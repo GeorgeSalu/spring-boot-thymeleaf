@@ -2,10 +2,14 @@ package com.example.security.domain;
 
 import javax.persistence.*;
 
-@SuppressWarnings("serial")
 @Entity
 @Table(name = "perfis")
 public class Perfil extends AbstractEntity {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5653058915556058386L;
 	
 	@Column(name = "descricao", nullable = false, unique = true)
 	private String desc;
