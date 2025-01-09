@@ -20,7 +20,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private static final String PACIENTE = PerfilTipo.PACIENTE.getDesc();
 	
 	@Autowired
-	private UsuarioService service;
+	private UsuarioService usuarioService;
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -66,7 +66,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		
-		auth.userDetailsService(service).passwordEncoder(new BCryptPasswordEncoder());
+		auth.userDetailsService(usuarioService).passwordEncoder(new BCryptPasswordEncoder());
 	}
 	
 }
