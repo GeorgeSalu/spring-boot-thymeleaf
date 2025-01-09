@@ -12,7 +12,7 @@ public class ExceptionController {
 	public ModelAndView usuarioNaoEncontradoException(UsernameNotFoundException ex) {
 		ModelAndView model = new ModelAndView("error");
 		model.addObject("status", 404);
-		model.addObject("error", "Operacao não pode ser realizada");
+		model.addObject("error", "Operação não pode ser realizada");
 		model.addObject("message", ex.getMessage());
 		
 		return model;
@@ -22,7 +22,7 @@ public class ExceptionController {
 	public ModelAndView acessoNagado(AcessoNegadoException ex) {
 		ModelAndView model = new ModelAndView("error");
 		model.addObject("status", 403);
-		model.addObject("error", "Operacao não pode ser realizada");
+		model.addObject("error", "Operação não pode ser realizada");
 		model.addObject("message", ex.getMessage());
 		
 		return model;
