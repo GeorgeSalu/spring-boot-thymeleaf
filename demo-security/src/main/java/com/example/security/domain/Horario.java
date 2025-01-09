@@ -4,10 +4,14 @@ import java.time.LocalTime;
 
 import javax.persistence.*;
 
-@SuppressWarnings("serial")
 @Entity
 @Table(name = "horas", indexes = {@Index(name = "idx_hora_minuto", columnList = "hora_minuto")})
 public class Horario extends AbstractEntity {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6128754312483672045L;
 	
 	@Column(name = "hora_minuto", unique = true, nullable = false)
 	private LocalTime horaMinuto;
