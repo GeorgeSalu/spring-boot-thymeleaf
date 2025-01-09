@@ -7,11 +7,15 @@ import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@SuppressWarnings("serial")
 @Entity
 @Table(name = "usuarios", indexes = {@Index(name = "idx_usuario_email", columnList = "email")})
 public class Usuario extends AbstractEntity {	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2543969004871558193L;
+
 	@Column(name = "email", unique = true, nullable = false)
 	private String email;
 	
