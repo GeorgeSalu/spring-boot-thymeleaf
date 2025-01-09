@@ -6,11 +6,15 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 import javax.persistence.*;
 import java.time.LocalDate;
 
-@SuppressWarnings("serial")
 @Entity
 @Table(name = "agendamentos") 
 public class Agendamento extends AbstractEntity {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5014324183804129437L;
+
 	@ManyToOne
 	@JoinColumn(name="id_especialidade")
 	private Especialidade especialidade;
