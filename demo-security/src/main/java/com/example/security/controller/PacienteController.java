@@ -54,7 +54,7 @@ public class PacienteController {
 			pacienteService.editar(paciente);
 			model.addAttribute("sucesso", "Seus dados foram inseridos com sucesso");
 		} else {
-			model.addAttribute("falha", "Sua senha nao confere, tente novamente");
+			model.addAttribute("falha", "Sua senha não confere, tente novamente");
 		}
 		return "paciente/cadastro";
 	}
