@@ -13,12 +13,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.security.datatables.Datatables;
 import com.example.security.datatables.DatatablesColunas;
 import com.example.security.domain.Perfil;
+import com.example.security.domain.PerfilTipo;
 import com.example.security.domain.Usuario;
 import com.example.security.repository.UsuarioRepository;
 
@@ -104,6 +106,17 @@ public class UsuarioService implements UserDetailsService {
 		usuario.setSenha(new BCryptPasswordEncoder().encode(senha));
 		
 		usuarioRepository.save(usuario);
+	}
+
+	@Transactional(readOnly = false)
+	public void salvarCadastroPaciente(Usuario usuario) {
+		
+		String crypt = new BCryptPasswordEncoder().encode(usuario.getSenha());
+		usuario.setSenha(crypt);
+		usuario.addPerfil(PerfilTipo.PACIENTE);
+		
+		usuarioRepository.save(usuario);
+		
 	}
 }
 
