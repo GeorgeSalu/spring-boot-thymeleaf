@@ -198,7 +198,23 @@ public class UsuarioController {
 		return "usuario/recuperar-senha";
 	}
 	
-
+	@PostMapping("/p/nova/senha")
+	public String confirmacaoDeRedefinicaoDeSenha(Usuario usuario,ModelMap model) {
+		
+		Usuario u = usuarioService.buscarPorEmail(usuario.getEmail());
+		
+		if(!usuario.getCodigoVerificador().equals(u.getCodigoVerificador())) {
+			model.addAttribute("falha", "Codigo verificador nao confere");
+			return "usuario/recuperar-senha";
+		}
+		u.setCodigoVerificador(null);
+		usuarioService.alterarSenha(u, usuario.getSenha());
+		model.addAttribute("alerta", "sucesso");
+		model.addAttribute("titulo", "senha redefinida");
+		model.addAttribute("texto", "voce ja pode logar no sistema");
+		
+		return "login";
+	}
 	
 }
 
