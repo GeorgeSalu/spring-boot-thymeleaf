@@ -159,17 +159,12 @@ public class UsuarioController {
 	
 	@PostMapping("/cadastro/paciente/salvar")
 	public String salvarCadastroPaciente(Usuario usuario,BindingResult result) {
-		
 		try {
-			
 			usuarioService.salvarCadastroPaciente(usuario);
-			
 		} catch (DataIntegrityViolationException ex) {
-			
 			result.reject("email", "Ops.... este email ja existe na base de dados");
 			return "cadastrar-se";
 		}
-		
 		return "redirect:/u/cadastro/realizado";
 	}
 	
