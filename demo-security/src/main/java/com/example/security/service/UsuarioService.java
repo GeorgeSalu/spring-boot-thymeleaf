@@ -2,6 +2,7 @@ package com.example.security.service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -41,7 +42,8 @@ public class UsuarioService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
-		Usuario usuario = buscarPorEmail(username);
+		Usuario usuario = buscarPorEmailEAtivo(username)
+				.orElseThrow(() -> new UsernameNotFoundException("Usuario "+username+" não encontrado"));
 		
 		return new User(
 				usuario.getEmail(), 
@@ -115,8 +117,14 @@ public class UsuarioService implements UserDetailsService {
 		usuario.addPerfil(PerfilTipo.PACIENTE);
 		
 		usuarioRepository.save(usuario);
-		
 	}
+	
+	@Transactional(readOnly = true)
+	public Optional<Usuario> buscarPorEmailEAtivo(String email) {
+		
+		return usuarioRepository.findByAndAtivo(email);
+	}
+	
 }
 
 
