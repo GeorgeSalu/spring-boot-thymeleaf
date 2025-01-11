@@ -11,7 +11,7 @@ public class EmailService {
 	@Autowired
 	private SpringTemplateEngine template;
 	
-	public void enviarPEdidoDeConfirmacaoDeCadastro(String destino,String codigo) {
+	public void enviarPedidoDeConfirmacaoDeCadastro(String destino,String codigo) {
 		
 		Context context = new Context();
 		context.setVariable("titulo", "Bem vindo a clinica Spring security");
