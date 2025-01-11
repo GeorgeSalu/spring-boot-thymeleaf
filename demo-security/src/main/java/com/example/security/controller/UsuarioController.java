@@ -173,6 +173,19 @@ public class UsuarioController {
 		return "redirect:/u/cadastro/realizado";
 	}
 	
+	@GetMapping("/confirmacao/cadastro")
+	public String respostaConfirmacaoCadastroPaciente(@RequestParam("codigo") String codigo,RedirectAttributes attr) {
+		
+		usuarioService.ativarCadastroPaciente(codigo);
+		
+		attr.addFlashAttribute("alerta", "sucesso");
+		attr.addFlashAttribute("titulo", "Cadastro ativado");
+		attr.addFlashAttribute("texto", "Parabens, seu cadastro esta ativo");
+		attr.addFlashAttribute("subtexto", "Siga com seu login/senha");
+		
+		return "redirect:/login";
+	}
+	
 }
 
 

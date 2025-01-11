@@ -137,12 +137,10 @@ public class UsuarioService implements UserDetailsService {
 		emailService.enviarPedidoDeConfirmacaoDeCadastro(email, codigo);
 	}
 	
-	@Transactional(readOnly = true)
+	@Transactional(readOnly = false)
 	public void ativarCadastroPaciente(String codigo) {
 		String email = new String(Base64Utils.decodeFromString(codigo));
-		
 		Usuario usuario = buscarPorEmail(email);
-		
 		if(usuario.hasNotId()) {
 			throw new AcessoNegadoException("Nao foi possivel ativar seu cadastro, entre em contato");
 		}
