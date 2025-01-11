@@ -1,5 +1,6 @@
 package com.example.security.service;
 
+import java.util.Base64;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -16,12 +17,14 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Base64Utils;
 
 import com.example.security.datatables.Datatables;
 import com.example.security.datatables.DatatablesColunas;
 import com.example.security.domain.Perfil;
 import com.example.security.domain.PerfilTipo;
 import com.example.security.domain.Usuario;
+import com.example.security.exception.AcessoNegadoException;
 import com.example.security.repository.UsuarioRepository;
 
 @Service
@@ -120,12 +123,31 @@ public class UsuarioService implements UserDetailsService {
 		usuario.addPerfil(PerfilTipo.PACIENTE);
 		
 		usuarioRepository.save(usuario);
+		
+		emailDeConfirmacaoDeCadastro(usuario.getEmail());
 	}
 	
 	@Transactional(readOnly = true)
 	public Optional<Usuario> buscarPorEmailEAtivo(String email) {
 		
 		return usuarioRepository.findByAndAtivo(email);
+	}
+	
+	public void emailDeConfirmacaoDeCadastro(String email) {
+		String codigo = Base64Utils.encodeToString(email.getBytes());
+		emailService.enviarPedidoDeConfirmacaoDeCadastro(email, codigo);
+	}
+	
+	@Transactional(readOnly = true)
+	public void ativarCadastroPaciente(String codigo) {
+		String email = new String(Base64Utils.decodeFromString(codigo));
+		
+		Usuario usuario = buscarPorEmail(email);
+		
+		if(usuario.hasNotId()) {
+			throw new AcessoNegadoException("Nao foi possivel ativar seu cadastro, entre em contato");
+		}
+		usuario.setAtivo(true);
 	}
 	
 }
