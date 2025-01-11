@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -180,6 +181,24 @@ public class UsuarioController {
 		
 		return "redirect:/login";
 	}
+	
+	@GetMapping("/p/redefinir/senha")
+	public String pedidoRecuperarSenha() {
+		
+		return "usuario/pedido-recuperar-senha";
+	}
+	
+	@GetMapping("/p/recuperar/senha")
+	public String redefinirSenha(String email,ModelMap model) {
+		
+		usuarioService.pedidoRedefinicaoDeSenha(email);
+		model.addAttribute("sucesso", "Em instantes vc recebera um email para prosseguir com a redefinicao de sua senha");
+		model.addAttribute("usuario", new Usuario(email));
+		
+		return "usuario/recuperar-senha";
+	}
+	
+
 	
 }
 

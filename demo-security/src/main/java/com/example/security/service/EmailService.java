@@ -23,4 +23,16 @@ public class EmailService {
 		System.out.println(html);
 	}
 	
+	public void enviarPedidoRedefinicaoSenha(String destino,String verificador) {
+		
+		Context context = new Context();
+		context.setVariable("titulo", "Redefinicao de senha");
+		context.setVariable("texto", "Para redefinir sua senha use o codigo de verificacao quando exigido no formulario");
+		context.setVariable("verificador", verificador);
+
+		String html = template.process("email/confirmacao", context);
+		
+		System.out.println(html);
+	}
+	
 }
