@@ -72,7 +72,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		
 		http.sessionManagement()
-			// quantidade de dispositivos que sera mantivo o login 
+			// quantidade de dispositivos que sera mantido o login 
 			.maximumSessions(1)
 			// so manterar o login em um unico dispositivo
 			.maxSessionsPreventsLogin(true)
