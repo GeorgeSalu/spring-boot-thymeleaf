@@ -30,15 +30,15 @@ public class HomeController {
 
 		if(lastException.contains(SessionAuthenticationException.class.getName())) {
 			model.addAttribute("alerta", "erro");
-			model.addAttribute("titulo", "Acesso recusado");
-			model.addAttribute("texto", "Voce ja esta logado em outro dispositivo");
-			model.addAttribute("subtexto", "Faça o logout ou espere sua sessão expirar");
+			model.addAttribute("titulo", "Acesso recusado!");
+			model.addAttribute("texto", "Você já esta logado em outro dispositivo.");
+			model.addAttribute("subtexto", "Faça o logout ou espere sua sessão expirar.");
 			return "login";
 		}
 		model.addAttribute("alerta", "erro");
-		model.addAttribute("titulo", "Credenciais invalidas");
-		model.addAttribute("texto", "Login ou senha incorretos, tente novamente");
-		model.addAttribute("subtexto", "Acesso permitido apenas para cadstro ja ativados");
+		model.addAttribute("titulo", "Credenciais inválidas!");
+		model.addAttribute("texto", "Login ou senha incorretos, tente novamente.");
+		model.addAttribute("subtexto", "Acesso permitido apenas para cadstro já ativados.");
 		return "login";		
 	}
 	
