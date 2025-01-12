@@ -32,7 +32,7 @@ public class HomeController {
 			model.addAttribute("alerta", "erro");
 			model.addAttribute("titulo", "Acesso recusado");
 			model.addAttribute("texto", "Voce ja esta logado em outro dispositivo");
-			model.addAttribute("subtexto", "Faça o logout ou espere sua sessoa expirar");
+			model.addAttribute("subtexto", "Faça o logout ou espere sua sessão expirar");
 			return "login";
 		}
 		model.addAttribute("alerta", "erro");
