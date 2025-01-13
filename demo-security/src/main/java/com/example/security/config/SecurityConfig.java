@@ -10,6 +10,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.session.RegisterSessionAuthenticationStrategy;
+import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy;
 import org.springframework.security.web.session.HttpSessionEventPublisher;
 
 import com.example.security.domain.PerfilTipo;
@@ -32,7 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 				// liberando acesso as seguintes urls
 				.antMatchers("/webjars/**", "/css/**", "/image/**", "/js/**").permitAll()
-				.antMatchers("/", "/home").permitAll()
+				.antMatchers("/", "/home", "/expired").permitAll()
 				.antMatchers("/u/novo/cadastro", "/u/cadastro/realizado", "/u/cadastro/paciente/salvar").permitAll()
 				.antMatchers("/u/confirmacao/cadastro").permitAll()
 				.antMatchers("/u/p/**").permitAll()
@@ -72,17 +74,27 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		
 		http.sessionManagement()
-			// quantidade de dispositivos que sera mantido o login 
 			.maximumSessions(1)
-			// so manterar o login em um unico dispositivo
-			.maxSessionsPreventsLogin(true)
+			.expiredUrl("/expired")
+			.maxSessionsPreventsLogin(false)
 			.sessionRegistry(sessionRegistry());
+		
+		http.sessionManagement()
+			.sessionFixation()
+			.newSession()
+			.sessionAuthenticationStrategy(sessionAuthStratagy());
 	}
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		
 		auth.userDetailsService(usuarioService).passwordEncoder(new BCryptPasswordEncoder());
+	}
+	
+	@Bean
+	public SessionAuthenticationStrategy sessionAuthStratagy() {
+		
+		return new RegisterSessionAuthenticationStrategy(sessionRegistry());
 	}
 	
 	@Bean
