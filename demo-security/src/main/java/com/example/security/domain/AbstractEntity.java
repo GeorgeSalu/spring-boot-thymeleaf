@@ -2,7 +2,7 @@ package com.example.security.domain;
 
 import java.io.Serializable;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @SuppressWarnings("serial")
 @MappedSuperclass

@@ -1,6 +1,6 @@
 package com.example.security.domain;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "perfis")

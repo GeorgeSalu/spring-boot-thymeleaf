@@ -2,7 +2,7 @@ package com.example.security.domain;
 
 import java.time.LocalTime;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "horas", indexes = {@Index(name = "idx_hora_minuto", columnList = "hora_minuto")})
