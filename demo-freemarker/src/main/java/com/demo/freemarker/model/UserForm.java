@@ -1,6 +1,6 @@
 package com.demo.freemarker.model;
 
-public class User {
+public class UserForm {
 
 	private String name;
 	private String message;

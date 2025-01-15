@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.demo.freemarker.model.User;
+import com.demo.freemarker.model.UserForm;
 
 @Controller
 public class FormController {
@@ -21,7 +21,7 @@ public class FormController {
 	}
 	
 	@PostMapping("/form")
-	public String formPost(User user,Model model) {
+	public String formPost(UserForm user,Model model) {
 		model.addAttribute("user", user);
 		return "form/form";
 	}
