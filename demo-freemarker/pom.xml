@@ -12,7 +12,7 @@
 	<artifactId>demo-freemarker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>demo-freemarker</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Projeto para explorar o Freemarker como template engine</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
