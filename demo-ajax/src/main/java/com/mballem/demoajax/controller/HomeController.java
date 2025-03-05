@@ -1,4 +1,4 @@
-package com.mballem.demoajax.web.controller;
+package com.mballem.demoajax.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
