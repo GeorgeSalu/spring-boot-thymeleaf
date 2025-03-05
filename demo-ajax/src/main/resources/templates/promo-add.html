@@ -15,10 +15,8 @@
 
         <div class="form-group">
             <label for="linkPromocao">Link da Oferta</label>
-            <input type="url" class="form-control" id="linkPromocao" name="linkPromocao" aria-describedby="linkOferta"
-                   placeholder="Ex.: http://www..."/>
-            <small id="linkOferta" class="form-text text-muted">Insira o link da promocao correspondente a oferta.
-            </small>
+            <input type="url" class="form-control" id="linkPromocao" name="linkPromocao" aria-describedby="linkOferta" placeholder="Ex.: http://www..." />
+            <small id="linkOferta" class="form-text text-muted">Insira o link da promocao correspondente a oferta.</small>
             <div id="error-linkPromocao" class=""></div>
         </div>
         <div class="form-group">
@@ -33,8 +31,7 @@
                 <div class="card" style="width: 18rem;">
                     <div class="card-header">Imagem</div>
                     <span class="mx-auto" id="loader-img"></span>
-                    <img id="linkImagem" name="linkImagem" class="card-img-top" th:src="@{/images/promo-dark.png}"
-                         width="308px"/>
+                    <img id="linkImagem" name="linkImagem" class="card-img-top" th:src="@{/images/promo-dark.png}" width="308px"/>
                     <div class="card-body bg-light">
                         <h5 id="site" class="card-title"></h5>
                     </div>
@@ -43,9 +40,7 @@
             <div class="col-md-8">
                 <div class="form-group">
                     <label for="preco">Preço da Oferta</label>
-                    <input type="text" class="form-control" id="preco" name="preco" placeholder="ex.: 59,99"
-                           data-mask="#.##0,00"
-                           data-mask-reverse="true"/>
+                    <input type="text" class="form-control" id="preco" name="preco" placeholder="ex.: 59,99" data-mask="#.##0,00" data-mask-reverse="true"/>
                     <div id="error-preco" class=""></div>
                 </div>
                 <div class="form-group">
@@ -58,8 +53,8 @@
                 </div>
                 <div class="form-group">
                     <label for="descricao">Descrição da Oferta</label>
-                    <textarea class="form-control" id="descricao" name="descricao"
-                              placeholder="Algo sobre a promoção ou produto..."></textarea>
+                    <textarea class="form-control" id="descricao" name="descricao" placeholder="Algo sobre a promoção ou produto...">
+                    </textarea>
                 </div>
             </div>
         </div>
