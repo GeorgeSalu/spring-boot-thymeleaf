@@ -120,5 +120,12 @@ public class Promocao implements Serializable {
 	public void setDtCadastro(LocalDateTime dtCadastro) {
 		this.dtCadastro = dtCadastro;
 	}
+
+	@Override
+	public String toString() {
+		return "Promocao [id=" + id + ", titulo=" + titulo + ", linkPromocao=" + linkPromocao + ", site=" + site
+				+ ", descricao=" + descricao + ", linkImagem=" + linkImagem + ", preco=" + preco + ", likes=" + likes
+				+ ", dtCadastro=" + dtCadastro + "]";
+	}
 	
 }
