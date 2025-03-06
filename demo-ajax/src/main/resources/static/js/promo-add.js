@@ -18,6 +18,9 @@ $("#linkPromocao").on('change', function() {
 				404: function() {
 					$("#alert").addClass("alert alert-danger").text("Nenhuma informação pode ser recuperada dessa url");
 				}
+			},
+			error: function() {
+				$("#alert").addClass("alert alert-danger").text("Ops.... algo deu errado tente mas tarde");
 			}
 		})
 		
