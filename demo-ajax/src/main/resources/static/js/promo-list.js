@@ -11,7 +11,6 @@ $(window).scroll(function() {
 	var scrollTop = $(this).scrollTop();
 	var conteudo = $(document).height() - $(window).height();
 	
-	// console.log('scrollTop: ', scrollTop, ' | ', 'conteudo', conteudo);
 	
 	if(scrollTop >= conteudo) {
 		pageNumber++;
@@ -34,7 +33,6 @@ function loadScrollBar(pageNumber) {
 			$("#loader-img").show();
 		},
 		success: function(response) {
-			// console.log("response > ", response);
 			
 			if(response.length > 150) {
 				$(".row").fadeIn(250, function() {
