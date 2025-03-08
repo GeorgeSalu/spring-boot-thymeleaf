@@ -1,4 +1,3 @@
-
 <div class="card-group col-md-3 pb-4" th:each="promo : ${promocoes}">
 	<div th:id="${promo.id}" class="card">
 		<div class="block-img">
@@ -14,8 +13,7 @@
 				<h6 class="badge badge-primary" th:text="|R$ ${{promo.preco}}|">R$ 9,99</h6>
 			</div>
 			<div class="btn-group">
-				<button th:id="${'likes-count-' + promo.id}" type="button"	class="btn btn-sm btn-outline-secondary" th:text="${promo.likes}">
-				</button>
+				<button th:id="${'likes-count-' + promo.id}" type="button"	class="btn btn-sm btn-outline-secondary" th:text="${promo.likes}"></button>
 				<button th:id="${'likes-btn-' + promo.id}" type="button" class="btn btn-sm btn-outline-secondary">
 					<i class="far fa-thumbs-up"></i>
 				</button>
