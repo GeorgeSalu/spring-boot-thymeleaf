@@ -1,6 +1,6 @@
 var pageNumber = 0;
 
-// efeito infinte scroll
+// efeito infinite scroll
 $(window).scroll(function() {
 	
 	var scrollTop = $(this).scrollTop();
