@@ -72,6 +72,36 @@ $("#autocomplete-input").autocomplete({
 })
 
 
+$("#autocomplete-submit").on("click", function() {
+	
+	var site = $("#autocomplete-input").val();
+	
+	$.ajax({
+		method: "POST",
+		url: "/promocao/site/list",
+		data: {
+			site: site
+		},
+		beforeSend: function() {
+			pageNumber = 0;
+			$("#fim-btn").hide();
+			$("#row").fadeOut(400, function() {
+				$(this).empty();
+			})
+		},
+		success: function(response) {
+			$(".row").fadeIn(250, function() {
+				$(this).append(response);
+			});
+		},
+		error: function() {
+			alert("Ops...., algo deu errado : "+xhr.status+", "+hxr.statusText)
+		}
+	})
+	
+})
+
+
 // adicionar likes
 $(document).on("click", "button[id*='likes-btn-']" ,function() {
 	
