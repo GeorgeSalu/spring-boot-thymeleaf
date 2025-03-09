@@ -67,7 +67,7 @@ $(document).on("click", "button[id*='likes-btn-']" ,function() {
 			$("#likes-count-"+id).text(response);
 		},
 		error: function(xhr) {
-			alert("Ops, ocorreu um erro : ")
+			alert("Ops, ocorreu um erro : "+xhr.status+", "+xhr.statusText)
 		}
 	})
 	
