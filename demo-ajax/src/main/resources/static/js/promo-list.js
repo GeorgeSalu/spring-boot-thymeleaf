@@ -56,7 +56,7 @@ function loadScrollBar(pageNumber) {
 
 
 // autocomplete
-$("autocomplete-input").autocomplete({
+$("#autocomplete-input").autocomplete({
 	source: function(request, response) {
 		$.ajax({
 			method: "GET",
