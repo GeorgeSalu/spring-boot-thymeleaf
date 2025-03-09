@@ -94,7 +94,7 @@ $("#autocomplete-submit").on("click", function() {
 				$(this).append(response);
 			});
 		},
-		error: function() {
+		error: function(xhr) {
 			alert("Ops...., algo deu errado : "+xhr.status+", "+hxr.statusText)
 		}
 	})
