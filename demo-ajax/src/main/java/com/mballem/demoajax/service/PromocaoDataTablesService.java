@@ -16,10 +16,10 @@ public class PromocaoDataTablesService {
 	public Map<String, Object> execute(PromocaoRepository repository,HttpServletRequest request) {
 		
 		int start = Integer.parseInt(request.getParameter("start"));
-		int lenght = Integer.parseInt(request.getParameter("length"));
+		int length = Integer.parseInt(request.getParameter("length"));
 		int draw = Integer.parseInt(request.getParameter("draw"));
 		
-		int current = currentPage(start, lenght);
+		int current = currentPage(start, length);
 		
 		Map<String, Object> json = new LinkedHashMap<String, Object>();
 		json.put("draw", null);
