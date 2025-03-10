@@ -5,6 +5,11 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
+
 import com.mballem.demoajax.repository.PromocaoRepository;
 
 public class PromocaoDataTablesService {
@@ -21,8 +26,14 @@ public class PromocaoDataTablesService {
 		
 		int current = currentPage(start, length);
 		
+		String column = columnName(request);
+		Sort.Direction direction = orderBy(request);
+		
+		Pageable pageable = PageRequest.of(current, length, direction, column);
+		
+		
 		Map<String, Object> json = new LinkedHashMap<String, Object>();
-		json.put("draw", null);
+		json.put("draw", draw);
 		json.put("recordsTotal", 0);
 		json.put("recordsFiltered", 0);
 		json.put("data", null);
@@ -30,9 +41,23 @@ public class PromocaoDataTablesService {
 		return json;
 	}
 
+	private Direction orderBy(HttpServletRequest request) {
+		String order = request.getParameter("order[0][dir]");
+		Sort.Direction sort = Sort.Direction.ASC;
+		if(order.equalsIgnoreCase("desc")) {
+			sort = Sort.Direction.DESC;
+		}
+		return sort;
+	}
+
+	private String columnName(HttpServletRequest request) {
+		int iCol = Integer.parseInt(request.getParameter("order[0][column]"));
+		return cols[iCol];
+	}
+
 	private int currentPage(int start, int lenght) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return start / lenght;
 	}
 	
 }
