@@ -106,8 +106,6 @@ public class PromocaoController {
 		} else {
 			model.addAttribute("promocoes", promocaoRepository.findBySite(site, pageRequest));
 		}
-		
-		
 		return "promo-card";
 	}
 	
