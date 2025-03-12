@@ -52,6 +52,7 @@ public class PromocaoController {
 	@GetMapping("/datatables/server")
 	public ResponseEntity<?> datatables(HttpServletRequest request) {
 		Map<String, Object> data = new PromocaoDataTablesService().execute(promocaoRepository, request);
+		log.info("DataTables {}", data);
 		return ResponseEntity.ok(data);
 	}
 	
