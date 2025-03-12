@@ -60,6 +60,7 @@ public class PromocaoController {
 	public ResponseEntity<?> autocompleteByTermo(@RequestParam("termo") String termo) {
 		
 		List<String> sites = promocaoRepository.findSitesByTermo(termo);
+		log.info("sites {}", sites);
 		return ResponseEntity.ok(sites);
 	}
 	
