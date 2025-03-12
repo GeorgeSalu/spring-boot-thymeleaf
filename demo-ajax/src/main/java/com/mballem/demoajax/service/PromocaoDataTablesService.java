@@ -16,9 +16,7 @@ import com.mballem.demoajax.repository.PromocaoRepository;
 
 public class PromocaoDataTablesService {
 
-	private String[] cols = {
-		"id", "titulo", "site", "linkPromocao", "descricao", "linkImagem", "preco", "likes", "dtCadastro", "categoria"	
-	};
+	private String[] cols = { "id", "titulo", "site", "linkPromocao", "descricao", "linkImagem", "preco", "likes", "dtCadastro", "categoria" };
 	
 	public Map<String, Object> execute(PromocaoRepository repository,HttpServletRequest request) {
 		
@@ -65,7 +63,6 @@ public class PromocaoDataTablesService {
 	}
 
 	private int currentPage(int start, int lenght) {
-		
 		return start / lenght;
 	}
 	
