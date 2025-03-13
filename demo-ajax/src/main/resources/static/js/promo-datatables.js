@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	
+	// definindo a localidade da lib moment
 	moment.locale('pt-br')
 	
 	$("#table-server").DataTable({
