@@ -16,7 +16,7 @@ $(document).ready(function() {
 			{data: "linkPromocao"},
 			{data: "descricao"},
 			{data: "linkImagem"},
-			{data: "preco", render: $.fn.dataTable.render.number('.', ',', 2, 'R$')},
+			{data: "preco", render: $.fn.dataTable.render.number('.', ',', 2, 'R$ ')},
 			{data: "likes"},
 			{data: "dtCadastro"},
 			{data: "categoria.titulo"}
