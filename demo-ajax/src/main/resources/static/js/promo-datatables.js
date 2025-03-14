@@ -27,7 +27,32 @@ $(document).ready(function() {
 				}
 			},
 			{data: "categoria.titulo"}
+		],
+		dom: 'Bfrtip',
+		buttons: [
+			{ 
+				text: 'editar',
+				attr: {
+					id: 'btn-editar',
+					type: 'button'
+				}	
+			},
+			{
+				text: 'Excluir',
+				attr: {
+					id: 'btn-excluir',
+					type: 'button'
+				}
+			}
 		]
+	});
+	
+	$("#btn-editar").on('click', function() {
+		alert('click no botao editar')
+	});
+	
+	$("#btn-excluir").on('click', function() {
+		alert('click no botao excluir')
 	});
 	
 });
