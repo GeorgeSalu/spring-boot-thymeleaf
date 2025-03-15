@@ -68,7 +68,7 @@ $(document).ready(function() {
 		}
 	});
 	
-	// acao do botao editar
+	// acao do botao editar (abrir modal)
 	$("#btn-editar").on('click', function() {
 		if(isSelectedRow()) {
 			$("#modal-form").modal('show');
