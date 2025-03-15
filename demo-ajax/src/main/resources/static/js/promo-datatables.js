@@ -93,7 +93,7 @@ $(document).ready(function() {
 					$("#edt_imagem").attr('src',data.linkImagem);
 				},
 				error: function() {
-					alert('Ops um erro ocorreu')
+					alert("Ops... Ocorreu um erro, tente mas tarde.")
 				}
 			})
 			
