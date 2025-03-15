@@ -70,15 +70,29 @@ $(document).ready(function() {
 	
 	// acao do botao editar
 	$("#btn-editar").on('click', function() {
-		
-		var id = table.row(table.$('tr.selected')).data().id;
-		
-		alert('click no botao editar'+id)
+		if(isSelectedRow()) {
+			$("#modal-form").modal('show');
+		}
 	});
 
 	// acao do botao excluir	
 	$("#btn-excluir").on('click', function() {
-		alert('click no botao excluir')
+		if(isSelectedRow() ){
+			$("#modal-delete").modal('show');
+		}
 	});
+	
+	
+	
+	function getPromoId() {
+		return table.row(table.$('tr.selected')).data().id;
+	}
+	
+	function isSelectedRow() {
+		var trow = table.row(table.$('tr.selected'));
+		return trow.data() !== undefined;
+	}
+	
+	
 	
 });
