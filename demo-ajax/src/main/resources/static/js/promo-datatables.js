@@ -88,7 +88,7 @@ $(document).ready(function() {
 			method: "GET",
 			url: "/promocao/delete/"+id,
 			success: function() {
-				$("#modal.delete").modal('hide');
+				$("#modal-delete").modal('hide');
 				table.ajax.reload();
 			},
 			error: function() {
