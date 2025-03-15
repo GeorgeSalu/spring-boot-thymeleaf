@@ -75,7 +75,7 @@ $(document).ready(function() {
 		}
 	});
 
-	// acao do botao excluir	
+	// acao do botao excluir (abrir modal)
 	$("#btn-excluir").on('click', function() {
 		if(isSelectedRow() ){
 			$("#modal-delete").modal('show');
