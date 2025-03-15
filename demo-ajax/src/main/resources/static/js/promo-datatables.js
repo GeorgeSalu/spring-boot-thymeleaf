@@ -93,7 +93,7 @@ $(document).ready(function() {
 					$("#edt_imagem").attr('src',data.linkImagem);
 				},
 				error: function() {
-					alert("Ops... Ocorreu um erro, tente mas tarde.")
+					alert("Ops...!, Ocorreu um erro, tente mas tarde.")
 				}
 			})
 			
@@ -118,7 +118,7 @@ $(document).ready(function() {
 				table.ajax.reload();
 			},
 			error: function() {
-				alert("Ops... Ocorreu um erro, tente mas tarde.")
+				alert("Ops...!, Ocorreu um erro, tente mas tarde.")
 			}
 		})
 	});
