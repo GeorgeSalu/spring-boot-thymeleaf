@@ -23,7 +23,7 @@ public class PromocaoDto {
 	@NotBlank(message = "uma imagem é requerido")
 	private String linkImagem;
 	
-	@NotNull(message = "o preco é requeirido")
+	@NotNull(message = "o preco é requerido")
 	@NumberFormat(style = Style.CURRENCY, pattern = "#,##0.00")
 	private BigDecimal preco;
 	
