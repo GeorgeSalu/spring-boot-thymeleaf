@@ -20,7 +20,7 @@ public class PromocaoDto {
 	
 	private String descricao;
 
-	@NotBlank(message = "uma imagem é requerido")
+	@NotBlank(message = "uma imagem é requerida")
 	private String linkImagem;
 	
 	@NotNull(message = "o preco é requerido")
