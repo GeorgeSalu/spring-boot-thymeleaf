@@ -48,7 +48,15 @@ $(document).ready(function() {
 			}
 		]
 	});
+
+	// acao para marcar/desmarcar botoes ao clicar na ordenacao
+	$("#table-server thead").on('click', 'tr' ,function() {
+		
+		table.buttons().disable();
+		
+	});
 	
+	// acao para marcar/desmarcar linhas clicadas
 	$("#table-server tbody").on('click', 'tr' ,function() {
 		if ($(this).hasClass('selected')) {
 			$(this).removeClass('selected');
@@ -61,7 +69,10 @@ $(document).ready(function() {
 	});
 	
 	$("#btn-editar").on('click', function() {
-		alert('click no botao editar')
+		
+		var id = table.row(table.$('tr.selected')).data().id;
+		
+		alert('click no botao editar'+id)
 	});
 	
 	$("#btn-excluir").on('click', function() {
