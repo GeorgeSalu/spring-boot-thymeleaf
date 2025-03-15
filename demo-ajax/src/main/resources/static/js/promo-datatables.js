@@ -68,13 +68,15 @@ $(document).ready(function() {
 		}
 	});
 	
+	// acao do botao editar
 	$("#btn-editar").on('click', function() {
 		
 		var id = table.row(table.$('tr.selected')).data().id;
 		
 		alert('click no botao editar'+id)
 	});
-	
+
+	// acao do botao excluir	
 	$("#btn-excluir").on('click', function() {
 		alert('click no botao excluir')
 	});
