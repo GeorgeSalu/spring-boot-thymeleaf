@@ -1,11 +1,11 @@
-# FullStack Web Spring Boot 
+# FullStack Web Java
 
 ## Tecnologias usadas:
 
 - Spring MVC
 - Spring Security
 - Servlet
-- MySQL/Postgresql
+- MySQL/PostgreSQL
 - Thymeleaf/FreeMarker
 - Thymeleaf (layouts e fragmentos)
 - HTML, CSS e Bootstrap 
