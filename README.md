@@ -6,7 +6,7 @@
 - Spring MVC
 - Spring Security
 - Java Servlet
-- Tomcat/Jetty
+- Apache Tomcat/Eclipse Jetty
 - MySQL/PostgreSQL
 - Thymeleaf/FreeMarker
 - Thymeleaf (layouts e fragmentos)
