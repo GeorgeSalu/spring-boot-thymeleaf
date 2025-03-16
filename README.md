@@ -4,7 +4,7 @@
 
 - Spring MVC
 - Spring Security
-- Servlet
+- Java Servlet
 - Tomcat/Jetty
 - MySQL/PostgreSQL
 - Thymeleaf/FreeMarker
