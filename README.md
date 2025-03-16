@@ -3,6 +3,7 @@
 ## Tecnologias usadas:
 
 - Spring Framework
+- Spring Boot
 - Spring MVC
 - Spring Security
 - Java Servlet
