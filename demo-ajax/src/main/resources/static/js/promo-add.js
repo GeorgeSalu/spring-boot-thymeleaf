@@ -14,7 +14,7 @@ $("#form-add-promo").submit(function(evt) {
 	promo.linkImagem = $("#linkImagem").attr("src");
 	promo.site = $("#site").text();
 	
-	console.log("promo > ", promo)
+	// console.log("promo > ", promo)
 	
 	$.ajax({
 		method: "POST",
@@ -44,7 +44,7 @@ $("#form-add-promo").submit(function(evt) {
 		},
 		statusCode: {
 			422: function(xhr) {
-				console.log("status error", xhr.status);
+				// console.log("status error", xhr.status);
 				var errors = $.parseJSON(xhr.responseText);
 				$.each(errors, function(key, val) {
 					$("#"+key).addClass("is-invalid");
@@ -53,7 +53,7 @@ $("#form-add-promo").submit(function(evt) {
 			}
 		},
 		error: function(xhr){
-			console.log("> error: ", xhr.responseText)
+			// console.log("> error: ", xhr.responseText)
 			$("#alert").addClass("alert alert-danger").text("Não foi possivel salvar esta promoção")
 		},
 		complete: function() {
