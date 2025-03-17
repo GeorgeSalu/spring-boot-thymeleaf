@@ -51,9 +51,7 @@ $(document).ready(function() {
 
 	// acao para marcar/desmarcar botoes ao clicar na ordenacao
 	$("#table-server thead").on('click', 'tr' ,function() {
-		
 		table.buttons().disable();
-		
 	});
 	
 	// acao para marcar/desmarcar linhas clicadas
@@ -170,8 +168,6 @@ $(document).ready(function() {
 				}
 			},
 		})
-		
-				
 	});
 	
 	// alterar a imagem no componente <img> do modal
@@ -190,14 +186,6 @@ $(document).ready(function() {
 		return trow.data() !== undefined;
 	}
 	
-	
-	
 });
-
-
-
-
-
-
 
 
