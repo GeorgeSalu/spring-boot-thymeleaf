@@ -80,8 +80,7 @@ public class PromocaoDto {
 
 	@Override
 	public String toString() {
-		return "PromocaoDto [id=" + id + ", titulo=" + titulo + ", descricao=" + descricao + ", linkImagem="
-				+ linkImagem + ", preco=" + preco + "]";
+		return "PromocaoDto [id=" + id + ", titulo=" + titulo + ", descricao=" + descricao + ", linkImagem="+ linkImagem + ", preco=" + preco + "]";
 	}
 	
 }
