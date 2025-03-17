@@ -60,15 +60,19 @@
 
 		<!-- Webjars -->
 		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>bootstrap</artifactId>
-			<version>5.3.3</version>
+		    <artifactId>bootstrap</artifactId>
+		    <groupId>org.webjars</groupId>
+		    <version>5.1.0</version>
 		</dependency>
-
 		<dependency>
-			<groupId>org.webjars.npm</groupId>
-			<artifactId>htmx.org</artifactId>
-			<version>1.9.12</version>
+		    <artifactId>bootstrap-icons</artifactId>
+		    <groupId>org.webjars.npm</groupId>
+		    <version>1.5.0</version>
+		</dependency>
+		<dependency>
+		    <artifactId>htmx.org</artifactId>
+		    <groupId>org.webjars.npm</groupId>
+		    <version>1.9.10</version>
 		</dependency>
 
 		 <!-- Testing -->
