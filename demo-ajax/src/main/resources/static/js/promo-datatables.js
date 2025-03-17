@@ -85,6 +85,7 @@ $(document).ready(function() {
 					// removendo as bordas vermelhas
 					$(".is-invalid").removeClass("is-invalid");
 					
+					// abrir modal
 					$("#modal-form").modal('show')
 				},
 				success: function(data) {
