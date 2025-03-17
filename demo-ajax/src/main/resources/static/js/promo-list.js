@@ -7,10 +7,8 @@ $(document).ready(function() {
 
 // efeito infinite scroll
 $(window).scroll(function() {
-	
 	var scrollTop = $(this).scrollTop();
 	var conteudo = $(document).height() - $(window).height();
-	
 	
 	if(scrollTop >= conteudo) {
 		pageNumber++;
@@ -18,7 +16,6 @@ $(window).scroll(function() {
 			loadScrollBar(pageNumber);
 		}, 200);
 	}
-	
 });
 
 function loadScrollBar(pageNumber) {
@@ -36,7 +33,6 @@ function loadScrollBar(pageNumber) {
 			$("#loader-img").show();
 		},
 		success: function(response) {
-			
 			if(response.length > 150) {
 				$(".row").fadeIn(250, function() {
 					$(this).append(response);
@@ -45,7 +41,6 @@ function loadScrollBar(pageNumber) {
 				$("#fim-btn").show();
 				$("#loader-img").removeClass("loader");
 			}
-
 		},
 		error: function(xhr) {
 			alert("Ops, ororreu um erro", xhr.status, " - ", xhr.statusText)
@@ -54,7 +49,6 @@ function loadScrollBar(pageNumber) {
 			$("#loader-img").hide();
 		}
 	})
-	
 }
 
 
@@ -76,7 +70,6 @@ $("#autocomplete-input").autocomplete({
 
 
 $("#autocomplete-submit").on("click", function() {
-	
 	var site = $("#autocomplete-input").val();
 	
 	$.ajax({
@@ -107,7 +100,6 @@ $("#autocomplete-submit").on("click", function() {
 
 // adicionar likes
 $(document).on("click", "button[id*='likes-btn-']" ,function() {
-	
 	var id = $(this).attr("id").split("-")[2];
 	
 	$.ajax({
