@@ -77,6 +77,11 @@ public class PromocaoDto {
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "PromocaoDto [id=" + id + ", titulo=" + titulo + ", descricao=" + descricao + ", linkImagem="
+				+ linkImagem + ", preco=" + preco + "]";
+	}
 	
 }
