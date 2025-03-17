@@ -144,7 +144,6 @@ $(document).ready(function() {
 			},
 			statusCode: {
 				422: function(xhr) {
-					console.log("status error", xhr.status);
 					var errors = $.parseJSON(xhr.responseText);
 					$.each(errors, function(key, val) {
 						$("#edt_"+key).addClass("is-invalid");
