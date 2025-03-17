@@ -78,6 +78,14 @@ $(document).ready(function() {
 				url: "/promocao/edit/"+id,
 				beforeSend: function() {
 					$("#modal-form").modal('show');
+					
+					//removendo as mensagens
+					$("span").closest('.error-span').remove();
+
+					// removendo as bordas vermelhas
+					$(".is-invalid").removeClass("is-invalid");
+					
+					$("#modal-form").modal('show')
 				},
 				success: function(data) {
 					$("#edt_id").val(data.id);
@@ -138,6 +146,15 @@ $(document).ready(function() {
 			method: "POST",
 			url: "/promocao/edit",
 			data: promo,
+			beforeSend: function() {
+				
+				//removendo as mensagens
+				$("span").closest('.error-span').remove();
+				
+				// removendo as bordas vermelhas
+				$(".is-invalid").removeClass("is-invalid");
+				
+			},
 			success: function() {
 				$("#modal-form").modal('hide');
 				table.ajax.reload();
