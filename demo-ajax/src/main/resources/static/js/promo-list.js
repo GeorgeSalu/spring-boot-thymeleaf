@@ -115,3 +115,25 @@ $(document).on("click", "button[id*='likes-btn-']" ,function() {
 	
 });
 
+// sse
+window.onload = init();
+
+function init() {
+	const evtSource = new EventSource("/promocao/notificacao");
+	
+	evtSource.onopen = (event) => {
+		console.log("a conexao foi estabelecida")
+	};
+	
+	evtSource.onmessage = (event) => {
+		console.log("nova mensagem", event.data)
+	}
+	
+}
+
+
+
+
+
+
+
