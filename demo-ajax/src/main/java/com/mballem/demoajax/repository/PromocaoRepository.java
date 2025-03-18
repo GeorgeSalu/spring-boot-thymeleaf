@@ -1,6 +1,7 @@
 package com.mballem.demoajax.repository;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 
@@ -35,5 +36,8 @@ public interface PromocaoRepository extends JpaRepository<Promocao, Long>{
 	
 	@Query("select p.likes from Promocao p where p.id = :id")
 	int findLikesById(@Param("id") Long id);
+
+	@Query("select MAX(p.dtCadastro) from Promocao p")
+	LocalDateTime findPromocaoComUltimaData();
 	
 }
