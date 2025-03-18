@@ -8,9 +8,7 @@ import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 public class Emissor {
 
 	private String id = UUID.randomUUID().toString();
-	
 	private SseEmitter emitter;
-	
 	private LocalDateTime ultimaData;
 	
 	public Emissor(SseEmitter emitter, LocalDateTime ultimaData) {
