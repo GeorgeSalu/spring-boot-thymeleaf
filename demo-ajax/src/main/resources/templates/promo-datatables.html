@@ -4,9 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-
 	<div class="corpo" layout:fragment="corpo">
-	
 		<table id="table-server" class="display nowrap" style="width:100%">
 			<thead class="thead-dark">
 		    	<tr>
@@ -26,7 +24,6 @@
 		
 		<div th:replace="promo-datatables-modal :: modal-form"></div>	
 		<div th:replace="promo-datatables-modal-del :: modal-delete"></div>	
-        
 	</div>
 
 	<script th:src="@{/js/promo-datatables.js}" th:fragment="js"></script>
