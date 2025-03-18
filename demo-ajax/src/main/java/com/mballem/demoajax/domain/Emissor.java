@@ -9,22 +9,22 @@ public class Emissor {
 
 	private String id = UUID.randomUUID().toString();
 	
-	private SseEmitter emiter;
+	private SseEmitter emitter;
 	
 	private LocalDateTime ultimaData;
 	
-	public Emissor(SseEmitter emiter, LocalDateTime ultimaData) {
+	public Emissor(SseEmitter emitter, LocalDateTime ultimaData) {
 		super();
-		this.emiter = emiter;
+		this.emitter = emitter;
 		this.ultimaData = ultimaData;
 	}
 
 	public SseEmitter getEmiter() {
-		return emiter;
+		return emitter;
 	}
 
 	public void setEmiter(SseEmitter emiter) {
-		this.emiter = emiter;
+		this.emitter = emiter;
 	}
 
 	public LocalDateTime getUltimaData() {
