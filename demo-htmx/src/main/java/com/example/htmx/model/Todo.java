@@ -3,6 +3,7 @@ package com.example.htmx.model;
 import java.time.OffsetDateTime;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.validator.constraints.Length;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,6 +11,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "todo")
@@ -19,8 +21,11 @@ public class Todo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@NotBlank(message = "title é obrigatorio")
+	@Length(max = 100, message = "title deve te no maximo 100 caracteres")
 	private String title;
 
+	@Length(max = 250, message = "description deve ter ate 250 caracteres")
 	private String description;
 
 	private Boolean completed;
