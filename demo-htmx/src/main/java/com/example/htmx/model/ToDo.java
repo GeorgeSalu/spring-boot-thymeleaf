@@ -15,7 +15,7 @@ import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "todo")
-public class Todo {
+public class ToDo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
