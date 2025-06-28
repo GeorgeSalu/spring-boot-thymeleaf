@@ -38,7 +38,7 @@ public class HomeController {
 		model.addAttribute("alerta", "erro");
 		model.addAttribute("titulo", "Credenciais inválidas!");
 		model.addAttribute("texto", "Login ou senha incorretos, tente novamente.");
-		model.addAttribute("subtexto", "Acesso permitido apenas para cadstro já ativados.");
+		model.addAttribute("subtexto", "Acesso permitido apenas para cadastro já ativados.");
 		return "login";		
 	}
 	
