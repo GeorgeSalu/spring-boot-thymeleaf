@@ -14,7 +14,7 @@
 	<artifactId>demo-security</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>demo-security</name>
-	<description>Spring Boot e MVC com Spring Security, Primeiros Passos no Desenvolvimento Web com Spring Boot e Spring Security.</description>
+	<description>spring boot e mvc com spring security, primeiros passos no desenvolvimento web com spring boot e spring security.</description>
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
