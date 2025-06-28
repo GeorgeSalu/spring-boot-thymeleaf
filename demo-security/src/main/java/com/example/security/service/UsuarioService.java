@@ -130,7 +130,7 @@ public class UsuarioService implements UserDetailsService {
 	@Transactional(readOnly = true)
 	public Optional<Usuario> buscarPorEmailEAtivo(String email) {
 		
-		return usuarioRepository.findByAndAtivo(email);
+		return usuarioRepository.findByEmailAndAtivo(email);
 	}
 	
 	public void emailDeConfirmacaoDeCadastro(String email) {

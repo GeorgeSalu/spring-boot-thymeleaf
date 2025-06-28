@@ -24,6 +24,6 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 	Optional<Usuario> findByIdAndPerfis(Long usuarioId, Long[] perfisId);
 
 	@Query("select u from Usuario u where u.email like :email AND u.ativo = true")
-	Optional<Usuario> findByAndAtivo(String email);
+	Optional<Usuario> findByEmailAndAtivo(String email);
 
 }
