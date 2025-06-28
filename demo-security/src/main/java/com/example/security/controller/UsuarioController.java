@@ -146,12 +146,14 @@ public class UsuarioController {
 		return "redirect:/u/editar/senha";
 	}
 	
+	// abrir pagina de novo cadastro de paciente
 	@GetMapping("/novo/cadastro")
 	public String novoCadastro(Usuario usuario) {
 		
 		return "cadastrar-se";
 	}
 	
+	// pagina de resposta do cadastro do paciente
 	@GetMapping("/cadastro/realizado")
 	public String cadastroRealizado() {
 		
