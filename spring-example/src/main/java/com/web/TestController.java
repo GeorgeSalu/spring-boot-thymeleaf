@@ -1,14 +1,15 @@
 package com.web;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class TestController {
 
-	@RequestMapping(path = "/teste")
-	public String action() {
-		System.out.println("Ola treinaweb");
+	@GetMapping("/teste")
+	public String action(Model model) {
+		model.addAttribute("nome", "george");
 		return "teste";
 	}
 	
