@@ -5,7 +5,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 @Controller
 public class TestController {
@@ -33,6 +36,17 @@ public class TestController {
     public String action4(Client client) {
         System.out.println(client);
         return "form";
+    }
+
+    // https://www.treinaweb.com.br/blog/posts?q=spring&age=27&skills=python,java,csharp
+    @GetMapping("/teste5")
+    public String action5(@RequestParam(name = "q", required = false, defaultValue = "treinaweb") String q,
+                          @RequestParam int age,
+                          @RequestParam List<String> skills) {
+        System.out.println(q);
+        System.out.println(age);
+        System.out.println(skills);
+        return "teste";
     }
 
 }
