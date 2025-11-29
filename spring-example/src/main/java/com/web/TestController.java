@@ -38,6 +38,7 @@ public class TestController {
         return "form";
     }
 
+    // QueryString
     // https://www.treinaweb.com.br/blog/posts?q=spring&age=27&skills=python,java,csharp
     @GetMapping("/teste5")
     public String action5(@RequestParam(name = "q", required = false, defaultValue = "treinaweb") String q,
