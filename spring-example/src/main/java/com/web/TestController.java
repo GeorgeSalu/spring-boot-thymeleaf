@@ -3,6 +3,7 @@ package com.web;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -20,5 +21,16 @@ public class TestController {
         modelAndView.addObject("nome", "treinaweb");
         return modelAndView;
     }
-	
+
+    @GetMapping("/teste3")
+    public String action3() {
+        return "form";
+    }
+
+    @PostMapping("/teste3")
+    public String action4(Client client) {
+        System.out.println(client);
+        return "form";
+    }
+
 }
