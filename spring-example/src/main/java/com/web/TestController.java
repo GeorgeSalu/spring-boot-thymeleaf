@@ -2,10 +2,7 @@ package com.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -48,6 +45,15 @@ public class TestController {
         System.out.println(q);
         System.out.println(age);
         System.out.println(skills);
+        return "teste";
+    }
+
+    // http://localhost:8080/produtos/1
+    // http://localhost:8080/produtos/2
+    // http://localhost:8080/produtos/3
+    @GetMapping("/teste6/{id}")
+    public String action6(@PathVariable("id") Long id) {
+        System.out.println(id);
         return "teste";
     }
 
