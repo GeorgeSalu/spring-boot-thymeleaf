@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,9 +7,9 @@
 <body>
     <h1>Formulario de clientes</h1>
 
-    <form method="post">
-        <input type="text" name="name" />
-        <input type="number" name="age" />
+    <form method="post" th:object="${client}">
+        <input type="text" th:field="*{name}" />
+        <input type="number" th:field="*{age}" />
         <input type="submit" value="salvar" />
     </form>
 </body>

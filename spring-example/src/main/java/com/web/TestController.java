@@ -3,6 +3,7 @@ package com.web;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -23,7 +24,8 @@ public class TestController {
     }
 
     @GetMapping("/teste3")
-    public String action3() {
+    public String action3(Model model) {
+        model.addAttribute("client", new Client("george", 12));
         return "form";
     }
 
