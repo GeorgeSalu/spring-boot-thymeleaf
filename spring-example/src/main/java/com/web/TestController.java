@@ -40,6 +40,7 @@ public class TestController {
 
     // QueryString
     // https://www.treinaweb.com.br/blog/posts?q=spring&age=27&skills=python,java,csharp
+    // https://www.treinaweb.com.br/blog/posts?q=spring&age=27&skills=python&skills=java&skills=csharp
     @GetMapping("/teste5")
     public String action5(@RequestParam(name = "q", required = false, defaultValue = "treinaweb") String q,
                           @RequestParam int age,
