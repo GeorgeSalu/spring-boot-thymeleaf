@@ -25,7 +25,7 @@ public class TestController {
 
     @GetMapping("/teste3")
     public String action3(Model model) {
-        model.addAttribute("client", new Client("george", 12));
+        model.addAttribute("client", new Client());
         return "form";
     }
 
