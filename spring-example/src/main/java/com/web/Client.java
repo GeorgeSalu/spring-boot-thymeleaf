@@ -17,8 +17,7 @@ public class Client {
     @Column(nullable = false)
     private int age;
 
-    public Client(Long id, String name, int age) {
-        this.id = id;
+    public Client(String name, int age) {
         this.name = name;
         this.age = age;
     }

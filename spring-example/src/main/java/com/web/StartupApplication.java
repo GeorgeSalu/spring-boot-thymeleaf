@@ -20,7 +20,10 @@ public class StartupApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println(clientRepository);
-        System.out.println("A aplicacao iniciou");
+        var client = new Client("george", 12);
+        clientRepository.save(client);
+
+        var client1 = clientRepository.findById(1L).get();
+        System.out.println(client1);
     }
 }
