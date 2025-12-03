@@ -10,6 +10,7 @@ public class ClientForm {
 
     private String phone;
 
+
     public ClientForm() {
     }
 
@@ -17,6 +18,10 @@ public class ClientForm {
         this.name = name;
         this.email = email;
         this.phone = phone;
+    }
+
+    public String cleanedPhone() {
+        return phone.replaceAll("[^0-9]", "");
     }
 
     public String getName() {
@@ -44,6 +49,6 @@ public class ClientForm {
     }
 
     public Client toClient() {
-        return new Client(this.name, this.email, this.phone);
+        return new Client(this.name, this.email, cleanedPhone());
     }
 }

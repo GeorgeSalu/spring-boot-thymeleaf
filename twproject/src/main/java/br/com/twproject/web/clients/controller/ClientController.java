@@ -37,4 +37,10 @@ public class ClientController {
         return new ModelAndView("clients/create", model);
     }
 
+    @PostMapping("/create")
+    public String create(ClientForm clientForm) {
+        var client = clientForm.toClient();
+        clientRepository.save(client);
+        return "redirect:/clients";
+    }
 }
