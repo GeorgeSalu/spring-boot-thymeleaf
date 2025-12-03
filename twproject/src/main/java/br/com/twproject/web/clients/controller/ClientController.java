@@ -1,9 +1,11 @@
 package br.com.twproject.web.clients.controller;
 
 import br.com.twproject.core.repositories.ClientRepository;
+import br.com.twproject.web.clients.dto.ClientForm;
 import br.com.twproject.web.clients.dto.ClientViewModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -28,4 +30,11 @@ public class ClientController {
         var model = Map.of("clients", clients);
         return new ModelAndView("clients/index", model);
     }
+
+    @GetMapping("/create")
+    public ModelAndView create() {
+        var model = Map.of("clientForm", new ClientForm());
+        return new ModelAndView("clients/create", model);
+    }
+
 }

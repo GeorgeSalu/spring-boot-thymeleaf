@@ -30,6 +30,12 @@ public class Client {
         this.phone = phone;
     }
 
+    public Client(String name, String email, String phone) {
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+    }
+
     public Long getId() {
         return id;
     }
