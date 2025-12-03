@@ -1,6 +1,5 @@
 package br.com.twproject.web.clients.controller;
 
-import br.com.twproject.core.models.Client;
 import br.com.twproject.core.repositories.ClientRepository;
 import br.com.twproject.web.clients.dto.ClientViewModel;
 import org.springframework.stereotype.Controller;
@@ -8,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
 import java.util.Map;
 
 @Controller
