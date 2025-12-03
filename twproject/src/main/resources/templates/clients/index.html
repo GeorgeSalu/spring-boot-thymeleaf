@@ -29,11 +29,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Cleyson lima</td>
-                    <td>email@ff</td>
-                    <td>(11) 9999-9999</td>
+                <tr th:each="client : ${clients}">
+                    <th scope="row" th:text="${client.id}">1</th>
+                    <td th:text="${client.name}">Cleyson lima</td>
+                    <td th:text="${client.email}">email@ff</td>
+                    <td th:text="${client.phone}">(11) 9999-9999</td>
                 </tr>
             </tbody>
         </table>
