@@ -1,6 +1,7 @@
 package br.com.twproject.web.clients.dto;
 
 import br.com.twproject.core.models.Client;
+import br.com.twproject.core.utils.StringUtils;
 
 public class ClientForm {
 
@@ -18,10 +19,6 @@ public class ClientForm {
         this.name = name;
         this.email = email;
         this.phone = phone;
-    }
-
-    public String cleanedPhone() {
-        return phone.replaceAll("[^0-9]", "");
     }
 
     public String getName() {
@@ -49,6 +46,10 @@ public class ClientForm {
     }
 
     public Client toClient() {
-        return new Client(this.name, this.email, cleanedPhone());
+        return new Client(this.name, this.email, StringUtils.cleanPhone(phone));
+    }
+
+    public static ClientForm of(Client client) {
+        return  new ClientForm(client.getName(), client.getEmail(), StringUtils.formatPhone(client.getPhone()));
     }
 }

@@ -5,11 +5,13 @@ import br.com.twproject.web.clients.dto.ClientForm;
 import br.com.twproject.web.clients.dto.ClientViewModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 @Controller
 @RequestMapping("/clients")
@@ -42,5 +44,15 @@ public class ClientController {
         var client = clientForm.toClient();
         clientRepository.save(client);
         return "redirect:/clients";
+    }
+
+    @GetMapping("/edit/{id}")
+    public ModelAndView edit(@PathVariable Long id) {
+        var client = clientRepository.findById(id);
+        if (!client.isPresent()) {
+            throw new NoSuchElementException("Cliente não encontrado");
+        }
+        var model = Map.of("clientForm", ClientForm.of(client.get()));
+        return new ModelAndView("clients/edit", model);
     }
 }

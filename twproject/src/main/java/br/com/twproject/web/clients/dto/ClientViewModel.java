@@ -1,6 +1,7 @@
 package br.com.twproject.web.clients.dto;
 
 import br.com.twproject.core.models.Client;
+import br.com.twproject.core.utils.StringUtils;
 
 public class ClientViewModel {
 
@@ -39,7 +40,7 @@ public class ClientViewModel {
     }
 
     public String getPhone() {
-        return phone.replaceAll("(\\d{2})(\\d{5})(\\d{4})", "($1) $2-$3");
+        return StringUtils.formatPhone(phone);
     }
 
     public void setPhone(String phone) {
