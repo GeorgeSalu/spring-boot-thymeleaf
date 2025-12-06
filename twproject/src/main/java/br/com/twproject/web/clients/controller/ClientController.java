@@ -48,10 +48,10 @@ public class ClientController {
 
     @GetMapping("/edit/{id}")
     public ModelAndView edit(@PathVariable Long id) {
-        var client = clientRepository.findById(id)
+        var clientForm = clientRepository.findById(id)
                 .map(ClientForm::of)
                 .orElseThrow(() -> new NoSuchElementException("Cliente não encontrado"));
-        var model = Map.of("clientForm", client);
+        var model = Map.of("clientForm", clientForm);
         return new ModelAndView("clients/edit", model);
     }
 
