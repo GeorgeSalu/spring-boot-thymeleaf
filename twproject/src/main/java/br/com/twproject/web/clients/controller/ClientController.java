@@ -55,4 +55,15 @@ public class ClientController {
         var model = Map.of("clientForm", ClientForm.of(client.get()));
         return new ModelAndView("clients/edit", model);
     }
+
+    @PostMapping("/edit/{id}")
+    public String edit(@PathVariable Long id,ClientForm clientForm) {
+        if (!clientRepository.existsById(id)) {
+            throw new NoSuchElementException("Cliente não encontrado");
+        }
+        var client = clientForm.toClient();
+        client.setId(id);
+        clientRepository.save(client);
+        return "redirect:/clients";
+    }
 }
