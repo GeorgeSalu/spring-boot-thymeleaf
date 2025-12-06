@@ -65,4 +65,13 @@ public class ClientController {
         clientRepository.save(client);
         return "redirect:/clients";
     }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Long id) {
+        if (!clientRepository.existsById(id)) {
+            throw new NoSuchElementException("Cliente não encontrado");
+        }
+        clientRepository.deleteById(id);
+        return "redirect:/clients";
+    }
 }
