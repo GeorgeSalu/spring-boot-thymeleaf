@@ -48,11 +48,10 @@ public class ClientController {
 
     @GetMapping("/edit/{id}")
     public ModelAndView edit(@PathVariable Long id) {
-        var client = clientRepository.findById(id);
-        if (!client.isPresent()) {
-            throw new NoSuchElementException("Cliente não encontrado");
-        }
-        var model = Map.of("clientForm", ClientForm.of(client.get()));
+        var client = clientRepository.findById(id)
+                .map(ClientForm::of)
+                .orElseThrow(() -> new NoSuchElementException("Cliente não encontrado"));
+        var model = Map.of("clientForm", client);
         return new ModelAndView("clients/edit", model);
     }
 
