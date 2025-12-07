@@ -20,9 +20,15 @@
 		<h1>Cadastro de clientes</h1>
 
 		<form method="post" th:object="${clientForm}">
-			<label> Nome* <input type="text" th:field="*{name}" required></label> 
-			<label> E-Mail* <input type="text" th:field="*{email}" required></label> 
-			<label> Telefone* <input type="text" th:field="*{phone}" required placeholder="(00) 00000-0000" pattern="^\(\d{2}\) \d{5}-\d{4}$"></label>
+			<label> Nome* 
+				<input type="text" th:field="*{name}" required>
+			</label> 
+			<label> E-Mail* 
+				<input type="text" th:field="*{email}" required>
+			</label> 
+			<label> Telefone* 
+				<input type="text" th:field="*{phone}" required placeholder="(00) 00000-0000" pattern="^\(\d{2}\) \d{5}-\d{4}$">
+			</label>
 
 			<button type="submit">Salvar</button>
 		</form>
