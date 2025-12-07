@@ -1,42 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>TwProjects - Cadastro de clientes</title>
-    <!-- pico css styles -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1.5.10/css/pico.min.css">
+	<meta charset="UTF-8">
+	<title>TwProjects - Cadastro de clientes</title>
+	<!-- pico css styles -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1.5.10/css/pico.min.css">
 </head>
 <body>
-    <nav class="container-fluid">
-        <ul>
-            <li>TwProjects</li>
-        </ul>
-        <ul>
-            <li><a href="#">Clientes</a></li>
-        </ul>
-    </nav>
+	<nav class="container-fluid">
+		<ul>
+			<li>TwProjects</li>
+		</ul>
+		<ul>
+			<li><a href="#">Clientes</a></li>
+		</ul>
+	</nav>
 
-    <main class="container">
-        <h1>Cadastro de clientes</h1>
+	<main class="container">
+		<h1>Cadastro de clientes</h1>
 
-        <form method="post" th:object="${clientForm}">
-            <label>
-                Nome*
-                <input type="text" th:field="*{name}" required >
-            </label>
+		<form method="post" th:object="${clientForm}">
+			<label> Nome* <input type="text" th:field="*{name}" required></label> 
+			<label> E-Mail* <input type="text" th:field="*{email}" required></label> 
+			<label> Telefone* <input type="text" th:field="*{phone}" required placeholder="(00) 00000-0000" pattern="^\(\d{2}\) \d{5}-\d{4}$"></label>
 
-            <label>
-                E-Mail*
-                <input type="text" th:field="*{email}"  required>
-            </label>
-
-            <label>
-                Telefone*
-                <input type="text" th:field="*{phone}"  required placeholder="(00) 00000-0000" pattern="^\(\d{2}\) \d{5}-\d{4}$">
-            </label>
-
-            <button type="submit">Salvar</button>
-        </form>
-    </main>
+			<button type="submit">Salvar</button>
+		</form>
+	</main>
 </body>
 </html>
