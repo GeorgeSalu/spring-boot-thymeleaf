@@ -13,17 +13,16 @@ Este repositório reúne projetos desenvolvidos com Spring Boot MVC utilizando o
 
 ## Tecnologias usadas:
 
-- Spring Framework
-- Spring Boot
-- Spring MVC
-- Spring Security
-- Java Servlet
-- Apache Tomcat/Eclipse Jetty
-- MySQL/PostgreSQL
-- Thymeleaf/FreeMarker/Pebble
-- Thymeleaf (layouts e fragmentos)
-- HTML, CSS e Bootstrap 
-- SQL e HQL/JPQL
-- Hibernate/JPA e Spring Data JPA 
-- JavaScript/Jquery/htmx
-- Ajax (Asynchronous JavaScript and XML)
+- Spring Framework.
+- Spring Boot.
+- Spring MVC.
+- Spring Security.
+- Java Servlet.
+- Apache Tomcat/Eclipse Jetty.
+- MySQL/PostgreSQL.
+- Thymeleaf/FreeMarker/Pebble.
+- Thymeleaf (layouts e fragmentos).
+- HTML, CSS e Bootstrap.
+- SQL/HQL/JPQL, Hibernate/JPA e Spring Data JPA.
+- JavaScript/Jquery/htmx.
+- Ajax (Asynchronous JavaScript and XML).
