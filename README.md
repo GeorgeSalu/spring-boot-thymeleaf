@@ -13,6 +13,6 @@
 - Thymeleaf (layouts e fragmentos)
 - HTML, CSS e Bootstrap 
 - SQL e HQL/JPQL
-- Hibernate/JPA e Spring jpa 
+- Hibernate/JPA e Spring Data JPA 
 - JavaScript/Jquery/htmx
 - Ajax (Asynchronous JavaScript and XML)
