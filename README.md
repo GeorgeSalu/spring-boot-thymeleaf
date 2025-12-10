@@ -4,11 +4,11 @@ Este repositório reúne projetos desenvolvidos com Spring Boot MVC utilizando o
 
 ## Principais Tecnologias
 
-Spring Boot MVC: Estrutura robusta para desenvolvimento de aplicações web em Java.
-Thymeleaf: Template engine para criação de páginas HTML dinâmicas.
-Spring Security: Implementação de autenticação e controle de acesso.
-JavaScript: Funcionalidades dinâmicas no front-end.
-Bootstrap: Estilização e responsividade das interfaces.
+- Spring Boot MVC: Estrutura robusta para desenvolvimento de aplicações web em Java.
+- Thymeleaf: Template engine para criação de páginas HTML dinâmicas.
+- Spring Security: Implementação de autenticação e controle de acesso.
+- JavaScript: Funcionalidades dinâmicas no front-end.
+- Bootstrap: Estilização e responsividade das interfaces.
 
 
 ## Tecnologias usadas:
