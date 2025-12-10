@@ -37,6 +37,10 @@
                     <td th:text="${client.phone}">(11) 9999-9999</td>
                     <td>
                         <a th:href="@{/clients/edit/{id} (id=${client.id})}">Editar</a>
+                        <a th:href="@{/clients/delete/{id} (id=${client.id})}"
+                            onclick="return confirm('tem certeza que seja excluir o cliente ?')">
+                            Excluir
+                        </a>
                     </td>
                 </tr>
             </tbody>
