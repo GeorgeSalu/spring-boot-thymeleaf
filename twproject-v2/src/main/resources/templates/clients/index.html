@@ -26,6 +26,7 @@
                     <th scope="col">Nome</th>
                     <th scope="col">E-Mail</th>
                     <th scope="col">Telefone</th>
+                    <th scope="col">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,6 +35,9 @@
                     <td th:text="${client.name}">Cleyson lima</td>
                     <td th:text="${client.email}">email@ff</td>
                     <td th:text="${client.phone}">(11) 9999-9999</td>
+                    <td>
+                        <a th:href="@{/clients/edit/{id} (id=${client.id})}">Editar</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
