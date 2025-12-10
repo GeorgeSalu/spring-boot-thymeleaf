@@ -20,7 +20,7 @@ Este repositório reúne projetos desenvolvidos com Spring Boot MVC utilizando o
 - Java Servlet
 - Apache Tomcat/Eclipse Jetty
 - MySQL/PostgreSQL
-- Thymeleaf/FreeMarker
+- Thymeleaf/FreeMarker/Pebble
 - Thymeleaf (layouts e fragmentos)
 - HTML, CSS e Bootstrap 
 - SQL e HQL/JPQL
