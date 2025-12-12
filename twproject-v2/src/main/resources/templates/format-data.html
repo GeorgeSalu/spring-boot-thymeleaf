@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-</head>
-<body>
-	<h1>Formatação de dados</h1>
-	
-	<p th:text="${#locale}"></p>
-	<p th:text="${locale}"></p>
-	<p th:text="${#temporals.format(date, 'dd/MM/yyyy')}"></p>
-	<p th:text="${#temporals.format(datetime, locale)}"></p>
-	<p th:text="${#numbers.formatCurrency(currency)}"></p>
-	<p th:text="${#numbers.formatDecimal(currency, 3, 2, 'COMMA')}"></p>
-	<p th:text="${#numbers.formatPercent(percent,1,0)}"></p>
-</body>
+	<head>
+	    <meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Formatação de dados</h1>
+		
+		<p th:text="${#locale}"></p>
+		<p th:text="${locale}"></p>
+		<p th:text="${#temporals.format(date, 'dd/MM/yyyy')}"></p>
+		<p th:text="${#temporals.format(datetime, locale)}"></p>
+		<p th:text="${#numbers.formatCurrency(currency)}"></p>
+		<p th:text="${#numbers.formatDecimal(currency, 3, 2, 'COMMA')}"></p>
+		<p th:text="${#numbers.formatPercent(percent,1,0)}"></p>
+	</body>
 </html>
