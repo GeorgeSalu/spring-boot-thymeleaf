@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>TwProjects - Erro</title>
-    <!-- pico css styles -->
-    <link rel="stylesheet" th:href="@{/css/pico.min.css}">
-</head>
-<body>
-    <nav class="container-fluid">
-        <ul>
-            <li>TwProjects</li>
-        </ul>
-        <ul>
-            <li>
-            	<a th:href="@{/clients}">Clientes</a>
-            </li>
-        </ul>
-    </nav>
-
-    <main class="container">
-        <h1>Erro interno</h1>
-
-        <p th:text="${message}"></p>
-    </main>
-</body>
+	<head>
+	    <meta charset="UTF-8">
+	    <title>TwProjects - Erro</title>
+	    <!-- pico css styles -->
+	    <link rel="stylesheet" th:href="@{/css/pico.min.css}">
+	</head>
+	<body>
+	    <nav class="container-fluid">
+	        <ul>
+	            <li>TwProjects</li>
+	        </ul>
+	        <ul>
+	            <li>
+	            	<a th:href="@{/clients}">Clientes</a>
+	            </li>
+	        </ul>
+	    </nav>
+	
+	    <main class="container">
+	        <h1>Erro interno</h1>
+	
+	        <p th:text="${message}"></p>
+	    </main>
+	</body>
 </html>
