@@ -46,6 +46,7 @@
             </tbody>
         </table>
         
+        <p th:unless="${not clients.isEmpty()}">Não existem clientes cadastrados</p>
 
         <a href="#" role="button">novo cliente</a>
     </main>
