@@ -19,7 +19,7 @@
     <main class="container">
         <h1>Listagem de Clientes</h1>
 
-        <table>
+        <table th:if="${not clients.isEmpty()}">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -45,6 +45,7 @@
                 </tr>
             </tbody>
         </table>
+        
 
         <a href="#" role="button">novo cliente</a>
     </main>
