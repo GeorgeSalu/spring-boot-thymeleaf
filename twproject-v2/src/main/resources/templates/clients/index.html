@@ -1,56 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>TwProjects - Listagem de clientes</title>
-    <!-- pico css styles -->
-    <link rel="stylesheet" th:href="@{/css/pico.min.css}" >
-</head>
-<body>
-    <nav class="container-fluid">
-        <ul>
-            <li>TwProjects</li>
-        </ul>
-        <ul>
-            <li>
-            	<a th:href="@{/clients}">Clientes</a>
-            </li>
-        </ul>
-    </nav>
-
-    <main class="container">
-        <h1>Listagem de Clientes</h1>
-
-        <table th:if="${not clients.isEmpty()}">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">E-Mail</th>
-                    <th scope="col">Telefone</th>
-                    <th scope="col">Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="client, iterStats : ${clients}">
-                    <th scope="row" th:text="${client.id}">1</th>
-                    <td th:text="${client.name}">Cleyson lima</td>
-                    <td th:text="${client.email}">email@ff</td>
-                    <td th:text="${client.phone}">(11) 9999-9999</td>
-                    <td>
-                        <a th:href="@{/clients/edit/{id} (id=${client.id})}">Editar</a>
-                        <a th:href="@{/clients/delete/{id} (id=${client.id})}"
-                            onclick="return confirm('tem certeza que deseja excluir o cliente ?')">
-                            Excluir
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <p th:unless="${not clients.isEmpty()}">Não existem clientes cadastrados</p>
-
-        <a href="#" role="button">novo cliente</a>
-    </main>
-</body>
+	<head>
+	    <meta charset="UTF-8">
+	    <title>TwProjects - Listagem de clientes</title>
+	    <!-- pico css styles -->
+	    <link rel="stylesheet" th:href="@{/css/pico.min.css}" >
+	</head>
+	<body>
+	    <nav class="container-fluid">
+	        <ul>
+	            <li>TwProjects</li>
+	        </ul>
+	        <ul>
+	            <li>
+	            	<a th:href="@{/clients}">Clientes</a>
+	            </li>
+	        </ul>
+	    </nav>
+	
+	    <main class="container">
+	        <h1>Listagem de Clientes</h1>
+	
+	        <table th:if="${not clients.isEmpty()}">
+	            <thead>
+	                <tr>
+	                    <th scope="col">#</th>
+	                    <th scope="col">Nome</th>
+	                    <th scope="col">E-Mail</th>
+	                    <th scope="col">Telefone</th>
+	                    <th scope="col">Ações</th>
+	                </tr>
+	            </thead>
+	            <tbody>
+	                <tr th:each="client, iterStats : ${clients}">
+	                    <th scope="row" th:text="${client.id}">1</th>
+	                    <td th:text="${client.name}">Cleyson lima</td>
+	                    <td th:text="${client.email}">email@ff</td>
+	                    <td th:text="${client.phone}">(11) 9999-9999</td>
+	                    <td>
+	                        <a th:href="@{/clients/edit/{id} (id=${client.id})}">Editar</a>
+	                        <a th:href="@{/clients/delete/{id} (id=${client.id})}"
+	                            onclick="return confirm('tem certeza que deseja excluir o cliente ?')">
+	                            Excluir
+	                        </a>
+	                    </td>
+	                </tr>
+	            </tbody>
+	        </table>
+	        
+	        <p th:unless="${not clients.isEmpty()}">Não existem clientes cadastrados</p>
+	
+	        <a href="#" role="button">novo cliente</a>
+	    </main>
+	</body>
 </html>
