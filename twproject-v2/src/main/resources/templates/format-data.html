@@ -7,9 +7,11 @@
 	<h1>Formatação de dados</h1>
 	
 	<p th:text="${#locale}"></p>
+	<p th:text="${locale}"></p>
 	<p th:text="${#temporals.format(date, 'dd/MM/yyyy')}"></p>
-	<p th:text="${#temporals.format(datetime)}"></p>
-	<p th:text="${currency}"></p>
-	<p th:text="${percent}"></p>
+	<p th:text="${#temporals.format(datetime, locale)}"></p>
+	<p th:text="${#numbers.formatCurrency(currency)}"></p>
+	<p th:text="${#numbers.formatDecimal(currency, 3, 2, 'COMMA')}"></p>
+	<p th:text="${#numbers.formatPercent(percent,1,0)}"></p>
 </body>
 </html>
