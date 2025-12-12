@@ -6,8 +6,9 @@
 <body>
 	<h1>Formatação de dados</h1>
 	
-	<p th:text="${date}"></p>
-	<p th:text="${datetime}"></p>
+	<p th:text="${#locale}"></p>
+	<p th:text="${#temporals.format(date, 'dd/MM/yyyy')}"></p>
+	<p th:text="${#temporals.format(datetime)}"></p>
 	<p th:text="${currency}"></p>
 	<p th:text="${percent}"></p>
 </body>
