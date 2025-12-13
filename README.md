@@ -1,6 +1,6 @@
 # FullStack Web Java
 
-Este repositório reúne projetos desenvolvidos com Spring Boot MVC utilizando o mecanismo de templates Thymeleaf para renderização de páginas dinâmicas. Os projetos exploram a integração com Spring Security para autenticação e autorização, além do uso de JavaScript e Bootstrap para interfaces modernas, responsivas e interativas.
+Este repositório reúne projetos desenvolvidos com Spring Boot MVC utilizando eu sua maioria o mecanismo de templates Thymeleaf para renderização de páginas dinâmicas mas a projetos em FreeMarker e Pebble também. Os projetos exploram a integração com Spring Security para autenticação e autorização, além do uso de JavaScript e Bootstrap para interfaces modernas, responsivas e interativas.
 
 ## Principais Tecnologias
 
