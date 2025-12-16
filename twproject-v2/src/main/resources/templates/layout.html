@@ -9,11 +9,6 @@
     <body>
         <div th:replace="~{fragments/_navbar :: navbar}"></div>
 
-        <main class="container" th:insert="${content}">
-            <h1>Boas vindas</h1>
-            <p>
-                Este é um projeto de exemplo do curso de spring boot
-            </p>
-        </main>
+        <main class="container" th:insert="${content}"></main>
     </body>
 </html>
