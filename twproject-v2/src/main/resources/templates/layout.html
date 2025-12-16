@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org" th:fragment="layout (title, content)">
+<head>
+    <meta charset="UTF-8">
+    <title>TwProjects - <th:block th:replace="${title}"></th:block></title>
+    <!-- pico css styles -->
+    <link rel="stylesheet" th:href="@{/css/pico.min.css}">
+</head>
+<body>
+<div th:replace="~{fragments/_navbar :: navbar}"></div>
+
+<main class="container" th:insert="${content}">
+    <h1>Boas vindas</h1>
+    <p>
+        Este é um projeto de exemplo do curso de spring boot
+    </p>
+</main>
+</body>
+</html>
