@@ -1,35 +1,22 @@
 <!DOCTYPE html>
-<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>TwProjects - Edição de cliente</title>
-		<!-- pico css styles -->
-		<link rel="stylesheet" th:href="@{/css/pico.min.css}" >
-	</head>
-	<body>
-		<!--
-   		Use th:insert se você quer adicionar um fragmento dentro de uma tag existente.
-   		Use th:replace se você quer que o fragmento substitua a tag completamente.
-         -->
-		<div th:replace="~{fragments/_navbar :: navbar}"></div>
-	
-		<main class="container">
-			<h1>Editar de clientes</h1>
-	
-			<form method="post" th:object="${clientForm}">
-				<label> Nome* 
-					<input type="text" th:field="*{name}" required> 
-				</label> 
-				<label> E-Mail* 
-					<input type="text" th:field="*{email}" required> 
-				</label> 
-				<label> Telefone* 
-					<input type="text" th:field="*{phone}" required placeholder="(00) 00000-0000" pattern="^\(\d{2}\) \d{5}-\d{4}$"> 
-				</label>
-	
-				<button type="submit">Salvar</button>
-			</form>
-		</main>
-	</body>
+<html th:replace="~{layout :: layout(~{::title}, ~{::content})}">
+	<th:block th:fragment="title">Edição de cliente</th:block>
+
+	<th:block th:fragment="content">
+		<h1>Editar de clientes</h1>
+
+		<form method="post" th:object="${clientForm}">
+			<label> Nome*
+				<input type="text" th:field="*{name}" required>
+			</label>
+			<label> E-Mail*
+				<input type="text" th:field="*{email}" required>
+			</label>
+			<label> Telefone*
+				<input type="text" th:field="*{phone}" required placeholder="(00) 00000-0000" pattern="^\(\d{2}\) \d{5}-\d{4}$">
+			</label>
+
+			<button type="submit">Salvar</button>
+		</form>
+	</th:block>
 </html>
