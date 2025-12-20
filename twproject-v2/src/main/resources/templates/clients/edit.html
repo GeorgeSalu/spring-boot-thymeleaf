@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html th:replace="~{layout :: layout(~{::title}, ~{::content})}">
+<html th:replace="~{layout :: layout(~{::title}, ~{::content}, _, _)}">
 	<th:block th:fragment="title">Edição de cliente</th:block>
 
 	<th:block th:fragment="content">
