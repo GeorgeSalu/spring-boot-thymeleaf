@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
-	<head>
-	    <meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html th:replace="~{layout :: layout(~{::title}, ~{::content}, _, _)}">
+	<th:block th:fragment="title">Format-data</th:block>
 
-		<!-- pico css styles -->
-		<link rel="stylesheet" th:href="@{/css/pico.min.css}" >
-	</head>
-	<body>
+	<th:block th:fragment="content">
 		<h1>Formatação de dados</h1>
-		
+
 		<p th:text="${#locale}"></p>
 		<p th:text="${locale}"></p>
 		<p th:text="${#temporals.format(date, 'dd/MM/yyyy')}"></p>
@@ -17,5 +11,5 @@
 		<p th:text="${#numbers.formatCurrency(currency)}"></p>
 		<p th:text="${#numbers.formatDecimal(currency, 3, 2, 'COMMA')}"></p>
 		<p th:text="${#numbers.formatPercent(percent,1,0)}"></p>
-	</body>
+	</th:block>
 </html>
