@@ -1,52 +1,39 @@
 <!DOCTYPE html>
-<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
-	<head>
-	    <meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <title>TwProjects - Listagem de clientes</title>
-	    <!-- pico css styles -->
-	    <link rel="stylesheet" th:href="@{/css/pico.min.css}" >
-	</head>
-	<body>
-		<!--
-   		Use th:insert se você quer adicionar um fragmento dentro de uma tag existente.
-   		Use th:replace se você quer que o fragmento substitua a tag completamente.
-         -->
-	    <div th:replace="~{fragments/_navbar :: navbar}"></div>
-	
-	    <main class="container">
-	        <h1>Listagem de Clientes</h1>
-	
-	        <table th:if="${not clients.isEmpty()}">
-	            <thead>
-	                <tr>
-	                    <th scope="col">#</th>
-	                    <th scope="col">Nome</th>
-	                    <th scope="col">E-Mail</th>
-	                    <th scope="col">Telefone</th>
-	                    <th scope="col">Ações</th>
-	                </tr>
-	            </thead>
-	            <tbody>
-	                <tr th:each="client, iterStats : ${clients}">
-	                    <th scope="row" th:text="${client.id}">1</th>
-	                    <td th:text="${client.name}">Cleyson lima</td>
-	                    <td th:text="${client.email}">email@ff</td>
-	                    <td th:text="${client.phone}">(11) 9999-9999</td>
-	                    <td>
-	                        <a th:href="@{/clients/edit/{id} (id=${client.id})}">Editar</a>
-	                        <a th:href="@{/clients/delete/{id} (id=${client.id})}"
-	                            onclick="return confirm('tem certeza que deseja excluir o cliente ?')">
-	                            Excluir
-	                        </a>
-	                    </td>
-	                </tr>
-	            </tbody>
-	        </table>
-	        
-	        <p th:unless="${not clients.isEmpty()}">Não existem clientes cadastrados</p>
-	
-	        <a href="#" role="button">novo cliente</a>
-	    </main>
-	</body>
+<html th:replace="~{layout :: layout(~{::title}, ~{::content})}">
+	<th:block th:fragment="title">Listagem de clientes</th:block>
+
+	<th:block th:fragment="content">
+		h1>Listagem de Clientes</h1>
+
+		<table th:if="${not clients.isEmpty()}">
+			<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Nome</th>
+				<th scope="col">E-Mail</th>
+				<th scope="col">Telefone</th>
+				<th scope="col">Ações</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr th:each="client, iterStats : ${clients}">
+				<th scope="row" th:text="${client.id}">1</th>
+				<td th:text="${client.name}">Cleyson lima</td>
+				<td th:text="${client.email}">email@ff</td>
+				<td th:text="${client.phone}">(11) 9999-9999</td>
+				<td>
+					<a th:href="@{/clients/edit/{id} (id=${client.id})}">Editar</a>
+					<a th:href="@{/clients/delete/{id} (id=${client.id})}"
+					   onclick="return confirm('tem certeza que deseja excluir o cliente ?')">
+						Excluir
+					</a>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+
+		<p th:unless="${not clients.isEmpty()}">Não existem clientes cadastrados</p>
+
+		<a href="#" role="button">novo cliente</a>
+	</th:block>
 </html>
