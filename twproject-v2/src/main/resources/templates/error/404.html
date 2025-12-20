@@ -1,25 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
-	<head>
-	    <meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <title>TwProjects - Erro - Pagina não encontrada</title>
-	    <!-- pico css styles -->
-	    <link rel="stylesheet" th:href="@{/css/pico.min.css}">
-	</head>
-	<body>
-		<!--
-   		Use th:insert se você quer adicionar um fragmento dentro de uma tag existente.
-   		Use th:replace se você quer que o fragmento substitua a tag completamente.
-         -->
-	    <div th:replace="~{fragments/_navbar :: navbar}"></div>
-	
-	    <main class="container">
-	        <h1>404</h1>
-	
-	        <p>A pagina que vc esta tentando acessar não foi encontrada</p>
+<html th:replace="~{layout :: layout(~{::title}, ~{::content})}">
+	<th:block th:fragment="title">Pagina não encontrada</th:block>
 
-	        <a onclick="window.history.back()">Voltar</a>
-	    </main>
-	</body>
+	<th:block th:fragment="content">
+		<h1>404</h1>
+
+		<p>A pagina que vc esta tentando acessar não foi encontrada</p>
+
+		<a onclick="window.history.back()">Voltar</a>
+	</th:block>
 </html>
