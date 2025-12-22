@@ -54,4 +54,10 @@ public class HomeController {
         model.addAttribute("pedidos", pedidos);
         return "lista-pedidos";
     }
+
+    @GetMapping("/filtros")
+    public String filtros(Model model) {
+        model.addAttribute("nome", "George");
+        return "filtros";
+    }
 }
