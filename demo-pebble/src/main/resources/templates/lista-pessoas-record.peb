@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lista pessoas</title>
+</head>
+<body>
+    <h1>Pessoas:</h1>
+
+    <ul>
+        {% for pessoa in pessoas %}
+            <li>{{ pessoa.nome }} - {{ pessoa.idade }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

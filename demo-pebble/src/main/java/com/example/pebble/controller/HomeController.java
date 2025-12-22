@@ -1,6 +1,7 @@
 package com.example.pebble.controller;
 
 import com.example.pebble.model.Pessoa;
+import com.example.pebble.model.PessoaRecord;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,5 +34,16 @@ public class HomeController {
         );
         model.addAttribute("pessoas", pessoas);
         return "lista-pessoas";
+    }
+
+    @GetMapping("/pessoas-record")
+    public String listarPessoasRecord(Model model) {
+        List<PessoaRecord> pessoas = List.of(
+                new PessoaRecord("George", 35),
+                new PessoaRecord("Camila", 40),
+                new PessoaRecord("Leo", 22)
+        );
+        model.addAttribute("pessoas", pessoas);
+        return "lista-pessoas-record";
     }
 }
