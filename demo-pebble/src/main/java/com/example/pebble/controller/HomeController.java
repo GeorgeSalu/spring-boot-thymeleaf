@@ -1,5 +1,6 @@
 package com.example.pebble.controller;
 
+import com.example.pebble.model.Pedido;
 import com.example.pebble.model.Pessoa;
 import com.example.pebble.model.PessoaRecord;
 import org.springframework.stereotype.Controller;
@@ -45,5 +46,12 @@ public class HomeController {
         );
         model.addAttribute("pessoas", pessoas);
         return "lista-pessoas-record";
+    }
+
+    @GetMapping("/pedidos")
+    public String listarPedidos(Model model) {
+        List<Pedido> pedidos = List.of(); // Lista vazia para testar o tratamento
+        model.addAttribute("pedidos", pedidos);
+        return "lista-pedidos";
     }
 }
