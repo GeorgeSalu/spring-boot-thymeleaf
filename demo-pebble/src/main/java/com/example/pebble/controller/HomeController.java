@@ -24,7 +24,7 @@ public class HomeController {
         return "lista-nomes";
     }
 
-    @GetMapping("/pessoas")
+    @GetMapping("/pessoas-pojo")
     public String listarPessoas(Model model) {
         List<Pessoa> pessoas = Arrays.asList(
                 new Pessoa("Ana", 25),
