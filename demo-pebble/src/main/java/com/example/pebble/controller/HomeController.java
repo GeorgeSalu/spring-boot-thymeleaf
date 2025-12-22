@@ -34,7 +34,7 @@ public class HomeController {
                 new Pessoa("Carlos", 22)
         );
         model.addAttribute("pessoas", pessoas);
-        return "lista-pessoas";
+        return "lista-pessoas-pojo";
     }
 
     @GetMapping("/pessoas-record")
