@@ -57,6 +57,7 @@ public class HomeController {
 
     @GetMapping("/filtros")
     public String filtros(Model model) {
+        model.addAttribute("lista", List.of("StackSpot", "Spring", "Pebble"));
         model.addAttribute("nome", "George");
         return "filtros";
     }

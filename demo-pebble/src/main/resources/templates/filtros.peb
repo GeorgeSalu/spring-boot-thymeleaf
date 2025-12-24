@@ -7,5 +7,12 @@
 </head>
 <body>
     <h1>Ola, {{ nome | upper }}</h1>
+
+    <h1>lista</h1>
+    <ul>
+        {% for item in lista %}
+            <li>{{ item | lower }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
