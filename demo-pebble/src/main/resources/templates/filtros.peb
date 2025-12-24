@@ -14,5 +14,8 @@
             <li>{{ item | lower }}</li>
         {% endfor %}
     </ul>
+
+    <p>Valor original: {{ valor }}</p>
+    <p>Arredondado (0 casas): {{ valor | numberformat("#.##")  }}</p>
 </body>
 </html>

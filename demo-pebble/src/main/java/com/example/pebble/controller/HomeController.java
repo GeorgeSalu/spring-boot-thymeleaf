@@ -59,6 +59,7 @@ public class HomeController {
     public String filtros(Model model) {
         model.addAttribute("lista", List.of("StackSpot", "Spring", "Pebble"));
         model.addAttribute("nome", "George");
+        model.addAttribute("valor", 1234.5678);
         return "filtros";
     }
 }
