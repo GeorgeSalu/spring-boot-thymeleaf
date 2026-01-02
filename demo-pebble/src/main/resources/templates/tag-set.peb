@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tag set</title>
+</head>
+<body>
+    {% set saudacao = "ola "~nome~" !" %}
+    <h1>{{ saudacao }}</h1>
+
+    {% set maioridade = idade >= 18 %}
+    {% if maioridade %}
+        <p>voce é maior de idade</p>
+    {% else %}
+        <p>voce é menor de idade</p>
+    {% endif %}
+</body>
+</html>

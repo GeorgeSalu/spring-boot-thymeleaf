@@ -62,4 +62,11 @@ public class HomeController {
         model.addAttribute("valor", 1234.5678);
         return "filtros";
     }
+
+    @GetMapping("/tag-set")
+    public String tagSet(Model model) {
+        model.addAttribute("nome","george");
+        model.addAttribute("idade", 30);
+        return "tag-set";
+    }
 }
